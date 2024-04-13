@@ -1,8 +1,21 @@
 /* Homepage css */
-beigeBackground {
-    background-color: blue;
+.beigeBackground {
+    background-color: #f4eadb;
+    font-size: 20px;
+    
+}
+
+.bodaniText{
+    font-family: 'Bodani FLF';
+    color: black;
+}
+
+.textSize{
 
 }
 
+.navLine{
+    border-top: 3px solid #967d55;
+}
 
 /* Start Button */
