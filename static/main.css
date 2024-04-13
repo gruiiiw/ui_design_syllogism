@@ -10,8 +10,8 @@
     color: black;
 }
 
-.textSize{
-
+.textLarge{
+    font-size: 30px;
 }
 
 .navLine{
@@ -19,3 +19,17 @@
 }
 
 /* Start Button */
+
+.startBtn {
+    background-color: #271905; /* Brown */
+    border: none;
+    border-radius: 12px; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
