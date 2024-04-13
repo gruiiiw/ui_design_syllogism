@@ -5,9 +5,6 @@ app = Flask(__name__)
 
 
 
-
-
-
 # ROUTES
 
 @app.route('/')
@@ -28,6 +25,19 @@ def lesson_page2():
 @app.route('/lesson/page3')
 def lesson_page3():
    return render_template('lesson_page3.html')
+
+#Building Block 1 Term Drag and Drop
+@app.route('/lesson/page4')
+def lesson_page4():
+   return render_template('lesson_page4.html')
+
+# BUILDING BLOCK 2: PROPOSITIONS
+@app.route('/lesson/page5')
+def lesson_page5():
+   return render_template('lesson_page5.html')
+
+
+
 
 
 if __name__ == '__main__':
