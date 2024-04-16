@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 
 
+
+
 # ROUTES
 
 @app.route('/')
@@ -13,11 +15,13 @@ def homepage():
 
 # Lesson Pages
 
-@app.route('/lesson/page1')
-def lesson_page1():
-   return render_template('lesson_page1.html')
+@app.route('/learn/<lesson_id>')
+def learn(lesson_id):
+   lesson = lessons[lesson_id]
+   return render_template('learn.html', lesson=lesson)
 
 
+# Quiz Pages - We need to have something to store the score
 
 
 
