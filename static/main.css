@@ -6,6 +6,11 @@
     
 }
 
+.titlePadding {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
 .bodaniText{
     font-family: 'Bodani FLF';
     color: black;
@@ -45,15 +50,15 @@
 
 /* Forward/Back Button */
 
-.nextBtn{
+#nextBtn{
     background-color: #271905; /* Brown */
 }
 
-.nextBtn:hover {
+#nextBtn:hover {
     background-color: #543c2c; /* Lighter Brown */
 }
 
-.nextBtn, .backBtn {
+#nextBtn, #backBtn {
     border: none;
     cursor: pointer;
     width: 60px;
@@ -69,11 +74,11 @@
     padding: 0; /* remove padding if any */
 }
 
-.backBtn{
+#backBtn{
     background-color: gray; /* Light */
 }
 
-.backBtn:hover {
+#backBtn:hover {
     background-color: #666666; /* Dark Gray */
 }
 
@@ -93,4 +98,70 @@
 
 .buttonContainer .nextBtn {
     margin-left: auto;
+}
+
+.categories, .draggable-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.category {
+    width: 30%;
+    min-height: 150px;
+    max-height: fit-content;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #eef;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #000;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#result {
+    clear: both;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+}
+
+.buttonContainer {
+    clear: both;
+    padding-top: 20px;
+}
+
+.highlight-blue {
+    background-color: #2596BE;
+    color: white;
+    border-radius: 8px;
+    padding: 3px 8px;
+}
+
+.highlight-green {
+    background-color: #588c6c;
+    color: white;
+    border-radius: 8px;
+    padding: 3px 8px;
+}
+
+.highlight-yellow {
+    background-color: #e0bc8c;
+    color: black;
+    border-radius: 8px;
+    padding: 3px 8px;
 }

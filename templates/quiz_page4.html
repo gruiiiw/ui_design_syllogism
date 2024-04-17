@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    .drop-zone {
+        width: 100%;
+        height: 50px;
+        border: 2px dashed #ccc;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .draggable {
+        padding: 5px 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 2px;
+        user-select: none;
+    }
+
+    .draggable:hover {
+        background-color: #ccc;
+    }
+
+    #result {
+        visibility: visible !important;
+    }
+</style>
+
+<div class="bodaniText">
+    <div class="textLarge">BUILDING BLOCK 2: PROPOSITIONS</div>
+    <p>Create three propositions using the terms and copula provided below:</p>
+</div>
+
+<div class="container">
+    <div class="drop-zone" id="zone1"></div>
+    <div class="drop-zone" id="zone2"></div>
+    <div class="drop-zone" id="zone3"></div>
+</div>
+
+<div class="draggable-items">
+    <span class="draggable" draggable="true" id="aristotle">Aristotle</span>
+    <span class="draggable" draggable="true" id="is">is</span>
+    <span class="draggable" draggable="true" id="a-man">a man</span>
+    <span class="draggable" draggable="true" id="the-professor">The professor</span>
+    <span class="draggable" draggable="true" id="lectures">lectures</span>
+    <span class="draggable" draggable="true" id="i">I</span>
+    <span class="draggable" draggable="true" id="am">am</span>
+    <span class="draggable" draggable="true" id="hungry">hungry</span>
+</div>
+
+
+
+<div id="result"></div>
+
+<div class="buttonContainer">
+    <a href="/"><button class="backBtn"><</button></a>
+    <a href="/quiz/page2"><button class="nextBtn">></button></a>
+</div>
+
+<script>
+    let draggables = document.querySelectorAll('.draggable');
+    let dropZones = document.querySelectorAll('.drop-zone');
+
+    // Adds event listeners to all draggable items
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', function(e) {
+            e.dataTransfer.setData('text', e.target.id); // Stores the id of the dragged element
+        });
+    });
+
+    // Adds event listeners to all drop zones
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragover', function(e) {
+            e.preventDefault(); // Necessary to allow the drop
+            e.dataTransfer.dropEffect = 'move'; // Visual indicator of move operation
+        });
+
+        zone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text'); // Retrieves the id of the dragged element
+            const draggable = document.getElementById(id);
+            draggable.style.margin = '0'; // Reset margin to prevent layout shift
+            if (!zone.contains(draggable)) { // Check to prevent appending the element more than once
+                zone.appendChild(draggable); // Appends the dragged element to the drop zone
+            }
+            checkBuildCorrect(); // Calls function to check if the propositions are correct
+        });
+    });
+
+    function checkBuildCorrect() {
+        const correctPropositions = [
+            "Aristotle is a man",
+            "The professor lectures",
+            "I am hungry"
+        ];
+        let propositions = Array.from(dropZones).map(zone =>
+            Array.from(zone.children).map(child => child.textContent.trim()).join(' ')
+        );
+        let correctCount = propositions.filter(prop => correctPropositions.includes(prop)).length;
+
+        console.log("Propositions checked:", propositions); // Outputs the current propositions to console
+        console.log("Correct count:", correctCount); // Debugging the count of correct propositions
+
+        const resultElement = document.getElementById('result');
+        console.log("Result element:", resultElement); // Check if the element is found
+
+        if (correctCount === 3) {
+            resultElement.innerHTML = "CORRECT";
+            resultElement.style.display = 'block';
+        } else {
+            resultElement.innerHTML = "Incorrect or incomplete propositions";
+            resultElement.style.display = 'block';
+
+        }
+    }
+
+</script>
+
+{% endblock %}

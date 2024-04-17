@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <script type = "text/javascript">
+        $(document).ready(function(){
+            $("#nextBtn").click(function(){
+                window.location.href = "{{lesson.next_lesson}}";
+            });
+           
+                  
+            $("#backBtn").click(function(){
+                window.location.href = "{{lesson.prev_lesson}}";
+                            
+            });
+            
+            $(document).keydown(function(e) {
+            switch(e.which) {
+                case 39: // right arrow key
+                    window.location.href = "{{lesson.next_lesson}}";
+                    break;
+                case 37: // left arrow key
+                    window.location.href = "{{lesson.prev_lesson}}";
+                    break;
+                default: return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+            });
+
+
+        });
+
+    </script>
+
+
+    <div class=" bodaniText">
+        <div class = "textLarge titlePadding">
+        {{lesson.title}}
+        </div>
+
+        {{lesson.text}}
+
+        <img src="{{lesson.image}}" alt="Lesson image">
+
+
+
+    </div>
+
+
+    <div class="buttonContainer">
+        <button id="backBtn"><</button>
+
+        <button id="nextBtn">></button>
+    </div>
+
+
+
+
+{% endblock %}
