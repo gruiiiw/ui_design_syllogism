@@ -5,8 +5,6 @@ from flask import Response, request, jsonify
 
 app = Flask(__name__)
 
-
-
 lessons = {
    "1":{
       "lesson_id": "1",
@@ -52,7 +50,6 @@ lessons = {
       sentence and can always be true or false
 
       Example:
-
       “I am hungry. ” is a proposition;
 
       “Feed me!” is not.""",
@@ -74,7 +71,7 @@ lessons = {
       "next_lesson":"/quiz/3",
       "prev_lesson":"/quiz/2",
       
-      "images":["diagram_1.png", "diagram_2.png"]
+      "images":["images/diagram_1.png", "images/diagram_2.png"]
    },
    
    "6":{
@@ -89,8 +86,7 @@ lessons = {
       
       "next_lesson":"/quiz/4",
       "prev_lesson":"/quiz/3",
-      "images":["diagram_3.png", "diagram_4.png"]
-
+      "images":["images/diagram_3.png", "images/diagram_4.png"]
    }
 }
 
@@ -106,7 +102,7 @@ def homepage():
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
    lesson = lessons[lesson_id]
-   return render_template('learn.html', lesson=lesson)
+   return render_template('learn.html', lesson=lesson, current_page='learn' + lesson_id)
 
 # Quiz Pages - We need to have something to store the score
 

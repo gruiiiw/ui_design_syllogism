@@ -67,11 +67,12 @@
         {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %} <!-- Add your terms here -->
 
         {% for word in lesson.text.split() %}
-            {% if word.lower()|contains_any(terms) %}
-                <span class="word">{{word}}</span>
-            {% else %}
-                <span>{{word}}</span>
-            {% endif %}
+                {% if word.lower()|contains_any(terms) %}
+                    <span class="word" title="{{definition}}">{{word}}</span>
+                {% else %}
+                    <span>{{word}}</span>
+                {% endif %}
+
         {% endfor %}
 
 
@@ -84,7 +85,7 @@
                     {% endfor %}
 
                     {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image">
+                        <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
                     {% endif %}
                 </div>
         
@@ -94,14 +95,28 @@
                         {{list}} <br>
                     {% endfor %}
                     {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image">
+                        <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
                     {% endif %}
 
                 </div>
             </div>
+        </div>
+        {% if lesson.text3 %}
+
+
+            {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+            {% for word in lesson.text3.split() %}
+                {% if word.lower()|contains_any(terms3) %}
+                    <strong><span class="word">{{word}}</span></strong>
+                {% else %}
+                    <span>{{word}}</span>
+                {% endif %}
+            {% endfor %}
+
+        {% endif %}
+
+
     </div>
-
-
 
     <div class="buttonContainer">
         <button id="backBtn"><</button>
