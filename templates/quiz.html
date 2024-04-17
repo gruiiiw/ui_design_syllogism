@@ -3,20 +3,20 @@
 <script type="text/javascript">
   $(document).ready(function () {
     $("#nextBtn").click(function () {
-      window.location.href = "{{lesson.next_lesson}}";
+      window.location.href = "{{quiz.next}}";
     });
 
     $("#backBtn").click(function () {
-      window.location.href = "{{lesson.prev_lesson}}";
+      window.location.href = "{{quiz.prev}}";
     });
 
     $(document).keydown(function (e) {
       switch (e.which) {
         case 39: // right arrow key
-          window.location.href = "{{lesson.next_lesson}}";
+          window.location.href = "{{quiz.next}}";
           break;
         case 37: // left arrow key
-          window.location.href = "{{lesson.prev_lesson}}";
+          window.location.href = "{{quiz.prev}}";
           break;
         default:
           return; // exit this handler for other keys
@@ -27,11 +27,11 @@
 </script>
 
 <div class="bodaniText">
-  <div class="textLarge titlePadding">{{lesson.title}}</div>
+  <div class="textLarge titlePadding">{{quiz.title}}</div>
 
-  {{lesson.text}}
+  {{quiz.text}}
 
-  <img src="{{lesson.image}}" alt="Lesson image" />
+  <img src="{{quiz.image}}" alt="Lesson image" />
 </div>
 
 <div class="buttonContainer">
