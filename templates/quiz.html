@@ -1,22 +1,23 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
 
+{% block content %}
 <script type="text/javascript">
   $(document).ready(function () {
     $("#nextBtn").click(function () {
-      window.location.href = "{{quiz.next}}";
+      window.location.href = "{{ quiz.next }}";
     });
 
     $("#backBtn").click(function () {
-      window.location.href = "{{quiz.prev}}";
+      window.location.href = "{{ quiz.prev }}";
     });
 
     $(document).keydown(function (e) {
       switch (e.which) {
         case 39: // right arrow key
-          window.location.href = "{{quiz.next}}";
+          window.location.href = "{{ quiz.next }}";
           break;
         case 37: // left arrow key
-          window.location.href = "{{quiz.prev}}";
+          window.location.href = "{{ quiz.prev }}";
           break;
         default:
           return; // exit this handler for other keys
@@ -27,17 +28,31 @@
 </script>
 
 <div class="bodaniText">
-  <div class="textLarge titlePadding">{{quiz.title}}</div>
-
-  {{quiz.text}}
-
-  <img src="{{quiz.image}}" alt="Lesson image" />
+    <div class="textLarge titlePadding">{{ quiz.title }}</div>
+    <p>{{ quiz.text }}</p>
+    {% if quiz.image %}
+    <img src="{{ quiz.image }}" alt="Lesson image" />
+    {% endif %}
 </div>
 
-<div class="buttonContainer">
-  <button id="backBtn"><</button>
+<div class="categories">
+    {% for category in quiz['categories'] %}
+    <div draggable="true" id="{{ category['id'] }}" class="category" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+        {{ category['name'] }}
+    </div>
+  {% endfor %}
 
-  <button id="nextBtn">></button>
 </div>
+
+<div class="draggable-items">
+  {% for item in quiz['items'] %}
+  <div draggable="true" id="{{ item['id'] }}" class="item" ondragstart="drag(event)" data-category="{{ item.category }}">
+    {{ item['name'] }}
+</div>
+  {% endfor %}
+</div>
+
+<div id="result" class="result"></div>
+
 
 {% endblock %}

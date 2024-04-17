@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="bodaniText">
+    <div class="textLarge">{{ quiz.title }}</div>
+    <p>{{ quiz.text }}</p>
+</div>
+
+<div class="categories">
+    <div id="us-states" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">US States</div>
+    <div id="horses" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">Horses</div>
+    <div id="speaking-things" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">Speaking Things</div>
+</div>
+
+<div class="draggable-items">
+    {% for item in quiz.items %}
+    <div draggable="true" id="{{ item.id }}" class="item" ondragstart="drag(event)">{{ item.name }}</div>
+    {% endfor %}
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="buttonContainer">
+    <a href="{{ quiz.prev }}"><button class="backBtn">&lt;</button></a>
+    <a href="{{ quiz.next }}"><button class="nextBtn">&gt;</button></a>
+</div>
+{% endblock %}

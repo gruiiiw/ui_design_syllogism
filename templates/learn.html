@@ -1,18 +1,17 @@
 {% extends "layout.html" %}
-{% block content %}
 
+{% block content %}
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $("#nextBtn").click(function(){
-            
             window.location.href = "{{lesson.next_lesson}}";
         });
-
+        
         $("#backBtn").click(function(){
             window.location.href = "{{lesson.prev_lesson}}";
         });
-
+        
         $(document).keydown(function(e) {
             switch(e.which) {
                 case 39: // right arrow key
@@ -54,56 +53,64 @@
     });
 </script>
 
-<div class="buttonContainer">
-    <button id="backBtn"><</button>
-    <div class="bodaniText">
-        <div class="textLarge titlePadding">
-            {{lesson.title}}
+<div class="bodaniText">
+    <div class="textLarge titlePadding">
+        {{lesson.title}}
+    </div>
+
+    {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
+    {% for word in lesson.text.split() %}
+        {% if word.lower()|contains_any(terms) %}
+            <span class="word" title="{{definition}}">{{word}}</span>
+        {% else %}
+            <span>{{word}}</span>
+        {% endif %}
+    {% endfor %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{lesson.text1}}  <br>
+                {% for list in lesson.list1 %}
+                    {{list}} <br>
+                {% endfor %}
+
+                {% if lesson.images %}
+                    <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
+                {% endif %}
+            </div>
+
+            <div class="col-md-6">
+                {{lesson.text2}}  <br>
+                {% for list in lesson.list2 %}
+                    {{list}} <br>
+                {% endfor %}
+                {% if lesson.images %}
+                    <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
+                {% endif %}
+            </div>
         </div>
-        {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
-        {% for word in lesson.text.split() %}
-            {% if word.lower()|contains_any(terms) %}
-                <span class="word" title="{{definition}}">{{word}}</span>
+    </div>
+    {% if lesson.text3 %}
+
+
+        {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+        {% for word in lesson.text3.split() %}
+            {% if word.lower()|contains_any(terms3) %}
+                <strong><span class="word">{{word}}</span></strong>
             {% else %}
                 <span>{{word}}</span>
             {% endif %}
         {% endfor %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    {{lesson.text1}}<br>
-                    {% for list in lesson.list1 %}
-                        {{list}}<br>
-                    {% endfor %}
-                    {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
-                    {% endif %}
-                </div>
-                <div class="col-md-6">
-                    {{lesson.text2}}<br>
-                    {% for list in lesson.list2 %}
-                        {{list}}<br>
-                    {% endfor %}
-                    {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        {% if lesson.text3 %}
-            {% set terms3 = ['valid', 'sound'] %}
-            {% for word in lesson.text3.split() %}
-                {% if word.lower()|contains_any(terms3) %}
-                    <strong><span class="word">{{word}}</span></strong>
-                {% else %}
-                    <span>{{word}}</span>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </div>
-</div>
-<div class="buttonContainer">
-    <button id="nextBtn">></button>
+
+    {% endif %}
+
+
 </div>
 
+<div class="buttonContainer">
+    <button id="backBtn"><</button>
+
+    <button id="nextBtn">></button>
+</div>
 {% endblock %}
