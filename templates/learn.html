@@ -41,9 +41,11 @@
 
         {{lesson.text}}
 
-        <img src="{{lesson.image}}" alt="Lesson image">
 
 
+            {% for image in lesson.images %}
+                <img src="{{ url_for('static', filename=image) }}" alt="Lesson image">
+            {% endfor %}
 
     </div>
 

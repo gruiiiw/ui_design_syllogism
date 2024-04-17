@@ -7,8 +7,6 @@ app = Flask(__name__)
 
 
 
-
-
 lessons = {
    "1":{
       "lesson_id": "1",
@@ -38,8 +36,8 @@ lessons = {
       "lesson_id": "4",
       "title": "Building Block 2: Propositions",
       "text": "",
-      "next_lesson":"2",
-      "prev_lesson":""
+      "next_lesson":"/quiz/2",
+      "prev_lesson":"/quiz/1"
    },
 
    "5":{
@@ -57,8 +55,8 @@ lessons = {
       "text": "",
       "next_lesson":"2",
       "prev_lesson":"",
-      "image":"images\diagram_1.png"
-      
+      "images":["diagram_1.png", "diagram_2.png"]
+
    }
 }
 
@@ -75,7 +73,6 @@ def homepage():
 def learn(lesson_id):
    lesson = lessons[lesson_id]
    return render_template('learn.html', lesson=lesson)
-
 
 # Quiz Pages - We need to have something to store the score
 
