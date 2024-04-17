@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type = "text/javascript">
         $(document).ready(function(){
             $("#nextBtn").click(function(){
@@ -27,24 +27,58 @@
             e.preventDefault(); // prevent the default action (scroll / move caret)
             });
 
+            let words = $('.word');
+            let index = 0;
 
+            function highlightNextWord() {
+                // Remove the highlight from the current word
+                if (words[index]) {
+                    $(words[index]).removeClass('highlight');
+                }
+                index++;
+                // Add the highlight to the next word
+                if (words[index]) {
+                    $(words[index]).addClass('highlight');
+                } else {
+                    // If there are no more words, stop the interval
+                    clearInterval(intervalId);
+                }
+                }
+
+                // Highlight the first word initially
+                if (words[0]) {
+                $(words[0]).addClass('highlight');
+                }
+
+                // Highlight the next word every 2 seconds
+                let intervalId = setInterval(highlightNextWord, 2000);
         });
+
+
 
     </script>
 
 
     <div class=" bodaniText">
         <div class = "textLarge titlePadding">
-        {{lesson.title}}
+            {{lesson.title}}
         </div>
 
-        {{lesson.text}}
+        {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %} <!-- Add your terms here -->
 
+        {% for word in lesson.text.split() %}
+            {% if word.lower()|contains_any(terms) %}
+                <span class="word">{{word}}</span>
+            {% else %}
+                <span>{{word}}</span>
+            {% endif %}
+        {% endfor %}
 
 
             {% for image in lesson.images %}
                 <img src="{{ url_for('static', filename=image) }}" alt="Lesson image">
             {% endfor %}
+
 
     </div>
 

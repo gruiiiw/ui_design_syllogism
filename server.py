@@ -19,7 +19,12 @@ lessons = {
    "2":{
       "lesson_id": "2",
       "title": "What is a Syllogism",
-      "text": "",
+      "text": """Here is a more precise definition of a syllogism:
+      Syllogisms: a syllogism is a specific form of argument
+      through which we infer a conclusion on the basis of
+      two premises, each of which is a proposition.
+      Syllogisms are distinguished by the fact that the two
+      premises have exactly one term in common. """,
       "next_lesson":"/learn/3",
       "prev_lesson":"/learn/1"
    },
@@ -35,7 +40,19 @@ lessons = {
    "4":{
       "lesson_id": "4",
       "title": "Building Block 2: Propositions",
-      "text": "",
+      "text": """A proposition involves connecting two terms,
+      a subject and a predicate , sometimes using
+      a copula, or a connector, such as “is,” “are”,
+      “was”, or “were.”
+
+      Propositions take the form of a declarative
+      sentence and can always be true or false
+
+      Example:
+
+      “I am hungry. ” is a proposition;
+
+      “Feed me!” is not.""",
       "next_lesson":"/quiz/2",
       "prev_lesson":"/quiz/1"
    },
@@ -75,6 +92,13 @@ def learn(lesson_id):
    return render_template('learn.html', lesson=lesson)
 
 # Quiz Pages - We need to have something to store the score
+
+
+
+# Other
+@app.template_filter('contains_any')
+def contains_any(word, terms):
+    return any(term in word for term in terms)
 
 
 if __name__ == '__main__':

@@ -99,3 +99,12 @@
 .buttonContainer .nextBtn {
     margin-left: auto;
 }
+
+
+.highlight {
+    background-color: rgb(39, 181, 39);
+    color: white;
+    border-radius: 5px; /* Adjust this value to change the roundness of the corners */
+    padding: 2px 5px; /* Adjust these values to change the space around the word */
+
+  }
