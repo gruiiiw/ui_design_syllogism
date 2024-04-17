@@ -3,27 +3,56 @@
 {% block content %}
 
 
-    
-    <div class=" bodaniText">
-        
-        
-                 
-        <div class = "textLarge">
-            WHAT IS A SYLLOGISM?</div>
-
-            <p>Syllogisms: a specific form of argument through
-            which we infer a conclusion on the basis of two premises
-        </p>
-            Syllogisms are central to logic, which is the study of correct
-            patterns of reasoning. Logic is all about argument and
-            persuasion.
+    <script type = "text/javascript">
+        $(document).ready(function(){
+            $("#nextBtn").click(function(){
+                window.location.href = "{{lesson.next_lesson}}";
+            });
+           
+                  
+            $("#backBtn").click(function(){
+                window.location.href = "{{lesson.prev_lesson}}";
+                            
+            });
             
-            To understand syllogisms, we need to understand their parts
-    </div>
-    <div class="buttonContainer">
-        <a href="/"><button class="backBtn"><</button></a>
+            $(document).keydown(function(e) {
+            switch(e.which) {
+                case 39: // right arrow key
+                    window.location.href = "{{lesson.next_lesson}}";
+                    break;
+                case 37: // left arrow key
+                    window.location.href = "{{lesson.prev_lesson}}";
+                    break;
+                default: return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+            });
 
-    <a href="/lesson/page2"><button class="nextBtn">></button></a></div>
+
+        });
+
+    </script>
+
+
+    <div class=" bodaniText">
+        <div class = "textLarge titlePadding">
+        {{lesson.title}}
+        </div>
+
+        {{lesson.text}}
+
+        <img src="{{lesson.image}}" alt="Lesson image">
+
+
+
+    </div>
+
+
+    <div class="buttonContainer">
+        <button id="backBtn"><</button>
+
+        <button id="nextBtn">></button>
+    </div>
 
 
 
