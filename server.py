@@ -52,7 +52,7 @@ lessons = {
    "6":{
       "lesson_id": "6",
       "title": "Building Block 2: Propositions",
-      "text": "",
+      "text": "Now that we know how propositions work, let’s put them together into syllogistic form:",
       "next_lesson":"2",
       "prev_lesson":"",
       "images":["diagram_1.png", "diagram_2.png"]
