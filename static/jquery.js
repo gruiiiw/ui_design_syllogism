@@ -27,6 +27,9 @@ function checkCorrectness() {
     var usStates = document.getElementById('us-states');
     var horses = document.getElementById('horses');
     var speakingThings = document.getElementById('speaking-things');
+    var zone1 = document.getElementById('zone1');
+    var zone2 = document.getElementById('zone2');
+    var zone3 = document.getElementById('zone3');
     var resultText = "Incorrect";
 
     if (usStates.querySelectorAll("#oregon, #rocky-mountain, #utah").length === 3 &&
@@ -34,11 +37,16 @@ function checkCorrectness() {
         speakingThings.querySelectorAll("#speaks, #speak").length === 2) {
         resultText = "Correct!";
     }
-
+    if (zone1.querySelectorAll("#aristotle, #is, #a-man").length === 3 &&
+        zone2.querySelectorAll("#the-professor, #lectures").length === 2 &&
+        zone3.querySelectorAll("#i, #am, #hungry").length === 3) {
+        resultText = "Correct!";
+        }
     document.getElementById('result').innerHTML = resultText;
     document.getElementById('result').style.display = 'block'; // Show the result text
-}
 
+    
+}
 
 let draggables = document.querySelectorAll('.draggable');
     let dropZones = document.querySelectorAll('.drop-zone');
