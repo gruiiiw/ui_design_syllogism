@@ -77,6 +77,22 @@ def learn(lesson_id):
    return render_template('learn.html', lesson=lesson)
 
 
+@app.route('/quiz/page1')
+def quiz_page1():
+   return render_template('quiz_page1.html')
+
+@app.route('/quiz/page2')
+def quiz_page2():
+   return render_template('quiz_page2.html')
+
+@app.route('/quiz/page3')
+def quiz_page3():
+   return render_template('quiz_page3.html')
+
+@app.route('/quiz/page4')
+def quiz_page4():
+   return render_template('quiz_page4.html')
+
 # Quiz Pages - We need to have something to store the score
 
 
