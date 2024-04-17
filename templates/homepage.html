@@ -1,35 +1,24 @@
 {% extends "layout.html" %}
-
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="center-content">
-
-                <div class=" bodaniText">
-                    
-                    <em style="font-size: 40px;">
-                    The Building Blocks of </em>
-                    <div class = "textLargest">
-                    Syllogisms</div>
-                    <div class=" titlePadding">
-                    <div style="font-size: 30px;">
-                    Learn how to identify, build, and construct strong arguments</div>
+                <div class="bodaniText">
+                    <em style="font-size: 40px;">The Building Blocks of </em>
+                    <div class="textLargest">Syllogisms</div>
+                    <div class="titlePadding">
+                        <div style="font-size: 30px;">Learn how to identify, build, and construct strong arguments</div>
                     </div>
-
                 </div>
-            
                 <a href="/learn/1">
-                <button class="startBtn">Start Lesson</button></a>
+                    <button class="startBtn">Start Lesson</button>
+                </a>
             </div>    
         </div>
-
-
         <div class="col-md-6">
             <img src="{{ url_for('static', filename='images/start_1.png') }}" alt="Your image" class="img-fluid">
         </div>
-
     </div>
 </div>
-
 {% endblock %}

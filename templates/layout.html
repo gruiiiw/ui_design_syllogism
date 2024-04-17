@@ -1,54 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="icon" href="data:,">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
 
-<!-- jquery -->
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
 
     <title>Home</title>
   </head>
-  <body class = "beigeBackground">
-    
-    
-<nav class="navbar navbar-expand-lg navbar-light beigeBackground">
-  <div class="container">
-    <a class="nav-link bold bodaniText" href="/">Home</a> <!-- click home name goes to homepage -->
-    <a class="nav-link bodaniText" href="/lesson/page1">Lesson</a> <!-- click website name goes to homepage -->
+  <body class="beigeBackground">
+    <nav class="navbar navbar-expand-lg navbar-light beigeBackground">
+      <div class="container">
+      <a class="nav-link bold bodaniText" href="/">Home</a>
+      <!-- click home name goes to homepage -->
 
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      {% if current_page == 'homepage' %}
+      <!-- click website name goes to homepage -->
+      <a class="nav-link bodaniText" href="/learn/1">Lesson</a>
+      {% endif %} {% if current_page.startswith('learn') %}
+      <img
+        src="/static/images/progress_bar/progress_bar_{{ current_page }}.png"
+        alt="Image for {{ current_page }}"
+        style="max-width: calc(100% - 500px); padding-left: 20px;"
+      />
+      {% endif %} {% if current_page.startswith('quiz') %}
+      <img
+        src="/static/images/progress_bar/progress_bar_{{ current_page }}.png"
+        alt="Image for {{ current_page }}"
+        style="max-width: calc(100% - 500px); padding-left: 20px;"
+      />
+      {% endif %}
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" style="padding-left: 10px; padding-right: 10px;"></div>
       </div>
-    </div>
-  </div>
-</nav>
+      </div>
+    </nav>
+    </nav>
 
-<hr class="navLine">
+    <hr class="navLine" />
 
-    <div class="container">   
-          {% block content %}
-
-
-          {% endblock %}
-
-    </div>
+    <div class="container">{% block content %} {% endblock %}</div>
   </body>
 </html>
-
-
-
-

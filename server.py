@@ -90,21 +90,64 @@ lessons = {
    }
 }
 
+quizzes = {
+   "1":{
+      "quiz_id": "1",
+      "title": "Building Block 1: Terms",
+      "text": "Exercise: Drag the following terms into their respective categories",
+      "next":"/learn/4",
+      "prev":"/learn/3"
+   },
+
+   "2":{
+      "quiz_id": "2",
+      "title": "Building Block 2: Propositions",
+      "text": "Create three propositions using the terms and copula provided below",
+      "next":"/learn/5",
+      "prev":"/learn/3"
+   },
+
+   "3":{
+      "quiz_id": "3",
+      "title": "Building the Syllogism",
+      "text": "Build two valid syllogisms using the propositions below. \n Make the first syllogism sound and the second syllogism unsound",
+      "next":"/learn/6",
+      "prev":"/learn/4"
+   },
+
+   "4":{
+      "quiz_id": "4",
+      "title": "Logical Fallacies",
+      "text": "Classify the statements below:",
+      "next":"/quiz/5",
+      "prev":"/learn/5"
+   },
+   "5":{
+      "quiz_id": "5",
+      "title": "Putting it all together",
+      "text": "",
+      "next":"/",
+      "prev":"/learn/5"
+   }
+
+}
 
 # ROUTES
-
 @app.route('/')
 def homepage():
-   return render_template('homepage.html')
+   return render_template('homepage.html', current_page='homepage')
 
 # Lesson Pages
-
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
    lesson = lessons[lesson_id]
    return render_template('learn.html', lesson=lesson, current_page='learn' + lesson_id)
 
 # Quiz Pages - We need to have something to store the score
+@app.route('/quiz/<quiz_id>')
+def quiz(quiz_id):
+   quiz = quizzes[quiz_id]
+   return render_template('quiz.html', quiz=quiz, current_page='quiz' + quiz_id)
 
 
 
