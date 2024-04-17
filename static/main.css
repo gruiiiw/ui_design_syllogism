@@ -11,6 +11,64 @@
     padding-bottom: 30px;
 }
 
+.blurb {
+    padding: 5px; /* Reduced padding for a smaller size */
+    background-color: burlywood;
+    color: white;
+    border-radius: 50%; /* Large border-radius to make it circular */
+    margin: 5px;
+    cursor: pointer; /* Indicates that the item is draggable */
+    display: inline-block; /* Ensures blurbs are on the same line */
+    width: 200px; /* Fixed width */
+    height: 80px; /* Fixed height */
+    line-height: 30px; /* Centers text vertically */
+    text-align: center; /* Centers text horizontally */
+    cursor: move;
+}
+
+.draggable:hover {
+    background-color: brown;
+    cursor: move;
+}
+
+
+.page-header h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0; /* Add bottom margin to separate from the droppable div */
+}
+
+
+#droppable {
+    padding: 0.5em;
+    margin-left: 0; /* Remove the left margin */
+}
+
+/* Your existing CSS... */
+
+#droppable.hovered {
+    background-color: yellow;
+}
+
+#droppable.accepted {
+    background-color: lightyellow;
+}
+
+
+.square-box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden; /* Keeps dragged items within the box */
+}
+
+.invisible {
+    display: none;
+}
+
 .bodaniText{
     font-family: 'Bodani FLF';
     color: black;

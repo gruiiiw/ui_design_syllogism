@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    var correct_options = {{ quiz.correct_answers | tojson | safe }};
+    var all_blurbs = {{ quiz.my_blurbs | tojson | safe }};
+    var all_squares = {{ quiz.my_squares | tojson | safe }};
+    console.log(correct_options);
+    console.log(all_blurbs);
+    console.log(all_squares);
+   
+</script>
+
+
+    
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $("#nextBtn").click(function(){
+            window.location.href = "{{quiz.next_lesson}}";
+        });
+
+        $("#backBtn").click(function(){
+            window.location.href = "{{quiz.prev_lesson}}";
+        });
+
+        $(document).keydown(function(e) {
+            switch(e.which) {
+                case 39: // right arrow key
+                    window.location.href = "{{quiz.next_lesson}}";
+                    break;
+                case 37: // left arrow key
+                    window.location.href = "{{quiz.prev_lesson}}";
+                    break;
+                default: return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        });
+
+        let words = $('.word');
+        let index = 0;
+
+        function highlightNextWord() {
+            if (words[index]) {
+                $(words[index]).removeClass('highlight');
+            }
+            index++;
+            if (words[index]) {
+                $(words[index]).addClass('highlight');
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+
+        if (words[0]) {
+            $(words[0]).addClass('highlight');
+        }
+
+        let intervalId = setInterval(highlightNextWord, 2000);
+
+        
+        // Make blurbs draggable
+        
+        console.log(correct_options)
+
+        // Apply draggable to any element whose ID contains 'blurb'
+
+
+ 
+
+
+
+
+    $(".droppable").droppable({
+        accept: function(el) {
+        // Check if the text of the draggable item contains 'Oregon'
+        var droppableText = $(this).text().trim().toLocaleLowerCase();
+        //console.log(droppableText)
+        return el.text().trim().toLowerCase() === "oregon" && droppableText == 'us states' ;
+    },
+        over: function(event, ui) {
+            $(this).addClass("hovered");
+        },
+        out: function(event, ui) {
+            $(this).removeClass("hovered");
+        },
+        drop: function(event, ui) {
+            $(this).removeClass("hovered");
+            $(this).addClass("accepted").find("p").html("Dropped!");
+        }
+    });
+
+    all_squares.forEach(function(squareText) {
+    
+    var newSquare = $('<div>', {
+    'class': 'droppable square-box',  // Set the CSS classes
+    'text': squareText                // Set the text content
+});
+$('.square-boxes').append(newSquare); // Append the new div to the container
+});
+
+all_blurbs.forEach(function(blurbText, index) {
+            var newBlurb = $('<div>', {
+                'id': 'blurb' + index,  // Dynamically adding an ID with the index
+                'class': 'draggable blurb',  // Set the CSS classes
+                'text': blurbText            // Set the text content
+            }).appendTo('.blurbs');  // Append the new div to the blurbs container
+
+            // Initialize draggable functionality immediately after appending
+            newBlurb.draggable({
+                revert: "invalid",
+                cursor: "move",
+                start: function() {
+                    $(this).css("border", "2px dotted #000");
+                },
+                stop: function() {
+                    $(this).css("border", "");
+                }
+            });
+        });
+  
+    
+
+});
+
+
+    
+
+    
+</script>
+
+<div class="bodaniText">
+    <div class="textLarge titlePadding">
+        {{quiz.title}}
+    </div>
+    {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
+    {% for word in quiz.text.split() %}
+        {% if word.lower()|contains_any(terms) %}
+            <span class="word">{{word}}</span>
+        {% else %}
+            <span>{{word}}</span>
+        {% endif %}
+    {% endfor %}
+    {% for image in quiz.images %}
+        <img src="{{ url_for('static', filename=image) }}" alt="Quiz image">
+    {% endfor %}
+</div>
+ 
+
+
+
+
+
+<div class="square-boxes">
+    <!-- Dynamically generated square boxes will go here -->
+</div>
+
+<div class="blurbs">
+    <!-- Dynamically generated square boxes will go here -->
+</div>
+
+
+
+
+
+<div class="buttonContainer">
+    <button id="backBtn"><</button>
+    <button id="nextBtn">></button>
+
+
+{% endblock %}

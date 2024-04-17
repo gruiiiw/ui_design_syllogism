@@ -6,6 +6,42 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 
+quizzes = {
+   "1":{
+      "quiz_id": "1",
+      "title": "Building Block 1: Terms",
+      "text": "Exercise: Drag the following terms into their respective categories",
+      "my_blurbs": ["Oregon", "That Horse over There", "speaks", "The Rocky Mountain State", "Secretarian", "speak", "Utah"],
+      "my_squares": ["US States", "Horses", "Speaking Things"],
+      "correct_answers": {"US States": ["Oregon", "Utah", "The Rocky Mountain State"], "Horses": ["That Horse over There", "Secretarian"], "Speaking Things": ["speaks", "speak"] },
+      "next_lesson":"/learn/4",
+      "prev_lesson":"/learn/3"
+   },
+
+   "2":{
+      "quiz_id": "2",
+      "title": "Building Block 2: Propositions",
+      "text": "Create three propositions using the terms and copua provided below",
+      "my_blurbs": ["a man", "is", "Aristotle", "lectures", "The professor", "I", "Hungry", "am", "hungry"],
+      "my_squares": ["1", "2", "3"],
+      "correct_answers": {"1": ["Aristotle", "is", "a man"], "2": ["The professor", "lectures"], "3": ["I", "am", "hungry"] },
+      "next_lesson":"/learn/5",
+      "prev_lesson":"/learn/4"
+   },
+
+    "3":{
+      "quiz_id": "3",
+      "title": "Building The Syllogism",
+      "text": "Build two valid syllogisms using the propositions below. Make the first syllogism",
+      "my_blurbs": ["a man", "is", "Aristotle", "lectures", "The professor", "I", "Hungry", "am", "hungry"],
+      "my_squares": ["1", "2", "3"],
+      "correct_answers": {"1": ["Aristotle", "is", "a man"], "2": ["The professor", "lectures"], "3": ["I", "am", "hungry"] },
+      "next_lesson":"/learn/4",
+      "prev_lesson":"/learn/5"
+   }
+
+}
+
 
 lessons = {
    "1":{
@@ -92,6 +128,13 @@ def learn(lesson_id):
    return render_template('learn.html', lesson=lesson)
 
 # Quiz Pages - We need to have something to store the score
+
+# Lesson Pages
+
+@app.route('/quiz/<quiz_id>')
+def quiz(quiz_id):
+   quiz = quizzes[quiz_id]
+   return render_template('quiz.html', quiz=quiz)
 
 
 
