@@ -75,12 +75,32 @@
         {% endfor %}
 
 
-            {% for image in lesson.images %}
-                <img src="{{ url_for('static', filename=image) }}" alt="Lesson image">
-            {% endfor %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {{lesson.text1}}  <br>
+                    {% for list in lesson.list1 %}
+                        {{list}} <br>
+                    {% endfor %}
 
+                    {% if lesson.images %}
+                        <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image">
+                    {% endif %}
+                </div>
+        
+                <div class="col-md-6">
+                    {{lesson.text2}}  <br>
+                    {% for list in lesson.list2 %}
+                        {{list}} <br>
+                    {% endfor %}
+                    {% if lesson.images %}
+                        <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image">
+                    {% endif %}
 
+                </div>
+            </div>
     </div>
+
 
 
     <div class="buttonContainer">
