@@ -50,15 +50,15 @@
 
 /* Forward/Back Button */
 
-#nextBtn{
+.nextBtn{
     background-color: #271905; /* Brown */
 }
 
-#nextBtn:hover {
+.nextBtn:hover {
     background-color: #543c2c; /* Lighter Brown */
 }
 
-#nextBtn, #backBtn {
+.nextBtn, .backBtn {
     border: none;
     cursor: pointer;
     width: 60px;
@@ -74,11 +74,11 @@
     padding: 0; /* remove padding if any */
 }
 
-#backBtn{
+.backBtn{
     background-color: gray; /* Light */
 }
 
-#backBtn:hover {
+.backBtn:hover {
     background-color: #666666; /* Dark Gray */
 }
 
@@ -110,11 +110,10 @@
     width: 30%;
     min-height: 150px;
     max-height: fit-content;
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
     margin: 10px;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #eef;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -122,13 +121,18 @@
 }
 
 .item {
-    width: 100%;
-    margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #000;
-    background-color: #f1f1f1;
+    width: auto;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    background-color: #b07454;
+    color: white;
     text-align: center;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
 }
+
 
 #result {
     clear: both;
@@ -137,7 +141,7 @@
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
 .buttonContainer {
@@ -164,4 +168,56 @@
     color: black;
     border-radius: 8px;
     padding: 3px 8px;
+}
+
+.draggable{
+    margin: 8px 12px;
+    padding: 8px 12px;
+}
+
+.drop-zone {
+    width: 100%;
+    height: 50px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.draggable:hover {
+    background-color: #ccc;
+}
+
+#aristotle, #a-man, #the-professor, #lectures, #i, #hungry {
+    width: auto;
+    margin: 8px 12px;
+    padding: 8px 12px;
+    background-color: #b07454;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+}
+
+#is, #am {
+    width: auto;
+    margin: 8px 12px;
+    padding: 8px 12px;
+    background-color: #ddbc8a;
+    color: white;
+    text-align: center;
+    border-radius: 1000px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+}
+
+#result {
+    visibility: visible !important;
 }
