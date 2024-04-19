@@ -31,12 +31,12 @@
         function highlightNextWord() {
             // Remove the highlight from the current word
             if (words[index]) {
-                $(words[index]).removeClass('highlight');
+                $(words[index]).removeClass('highlight-green');
             }
             index++;
             // Add the highlight to the next word
             if (words[index]) {
-                $(words[index]).addClass('highlight');
+                $(words[index]).addClass('highlight-green');
             } else {
                 // If there are no more words, stop the interval
                 clearInterval(intervalId);
@@ -45,7 +45,7 @@
 
         // Highlight the first word initially
         if (words[0]) {
-            $(words[0]).addClass('highlight');
+            $(words[0]).addClass('highlight-green');
         }
 
         // Highlight the next word every 2 seconds
@@ -95,6 +95,7 @@
 
 
         {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+        
         {% for word in lesson.text3.split() %}
             {% if word.lower()|contains_any(terms3) %}
                 <strong><span class="word">{{word}}</span></strong>
