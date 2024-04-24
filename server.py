@@ -112,7 +112,6 @@ quizzes = {
             {"id": "secretariat", "name": "Secretariat", "category": "horses"},
             {"id": "speak", "name": "speak", "category": "speaking-things"},
             {"id": "utah", "name": "Utah", "category": "us-states"}
-            # Other items...
         ]
     },
     "2": {
@@ -143,7 +142,23 @@ quizzes = {
       "title": "Building the Syllogism",
       "text": "Build two valid syllogisms using the propositions below. \n Make the first syllogism sound and the second syllogism unsound",
       "next":"/learn/6",
-      "prev":"/learn/4"
+      "prev":"/learn/4",
+      "categories": [
+            {"id": "z11", "name": "P1"},
+            {"id": "z12", "name": "P1"},
+            {"id": "z21", "name": "P2"},
+            {"id": "z22", "name": "P2"},
+            {"id": "z31", "name": "C"},
+            {"id": "z32", "name": "C"}
+        ],
+        "items": [
+            {"id": "p1_1", "name": "All mammals are animals", "category": "prop11"},
+            {"id": "p1_2", "name": "All professors teach math", "category": "prop12"},
+            {"id": "p2_2", "name": "Beyonce is a professor", "category": "prop21"},
+            {"id": "p2_1", "name": "that horse is a mammal", "category": "prop22"},
+            {"id": "c_1", "name": "that horse is an animal", "category": "prop31"},
+            {"id": "c_2", "name": "Beyonce teaches math", "category": "prop32"},
+        ]
    },
 
    "4":{

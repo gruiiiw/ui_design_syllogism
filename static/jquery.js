@@ -39,12 +39,35 @@ $(document).ready(function () {
                 checkCorrectness();
             } else if (quizId === 2) {
                 checkBuildCorrect();
+            } else if (quizId === 3) {
+                checkSyllogismMapping();
             }
         }
     });
 });
 
+function checkSyllogismMapping() {
+    let mappingCorrect = true; // Assume mapping is correct initially
+    let mappings = {
+        'p1_1': 'z11',
+        'p1_2': 'z12',
+        'p2_1': 'z21',
+        'p2_2': 'z22',
+        'c_1': 'z31',
+        'c_2': 'z32'
+    };
 
+    $('.category').each(function() {
+        let expectedItem = Object.keys(mappings).find(key => mappings[key] === this.id);
+        let actualItem = $(this).children('.item').attr('id');
+        if (actualItem !== expectedItem) {
+            mappingCorrect = false;
+        }
+    });
+
+    let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
+    $('#result').text(resultText).show();
+}
 
 function checkCorrectness() {
     var usStates = document.getElementById('us-states');

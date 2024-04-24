@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div id="quizContainer" data-quiz-id="{{ quiz.quiz_id }}"> <!-- Added data attribute here -->
+<div id="quizContainer" class="quiz-style-{{ quiz.quiz_id }}" data-quiz-id="{{ quiz.quiz_id }}">
     <script type="text/javascript">
     $(document).ready(function () {
         $("#nextBtn").click(function () {
@@ -38,8 +38,10 @@
 
     <div class="categories">
         {% for category in quiz['categories'] %}
-        <div draggable="true" id="{{ category['id'] }}" class="category" ondragover="allowDrop(event)" ondrop="drop(event, this)">
-            {{ category['name'] }}
+        <div draggable="true" id="{{ category['id'] }}" class="category" data-name="{{ category['name'] }}" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+          {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' %}
+          {{ category['name'] }}
+          {% endif %}
         </div>
         {% endfor %}
     </div>
@@ -55,8 +57,8 @@
     <div id="result" class="result"></div>
 
     <div class="buttonContainer">
-        <button id="backBtn" class="backBtn">&lt;</button>
-        <button id="nextBtn" class="nextBtn">&gt;</button>
-    </div>
+      <button id="backBtn" class="backBtn">&lt;</button>
+      <button id="nextBtn" class="nextBtn">&gt;</button>
+  </div>
 </div> <!-- Closing quiz container -->
 {% endblock %}
