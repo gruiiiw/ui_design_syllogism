@@ -117,6 +117,5 @@ def quiz(quiz_id):
    quiz = quizzes[quiz_id]
    return render_template('quiz.html', quiz=quiz, current_page='quiz' + quiz_id)
 
-
 if __name__ == '__main__':
    app.run(debug = True)
