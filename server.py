@@ -212,7 +212,6 @@ def contains_any(word, terms):
 #@app.route('/quiz/page3')
 #def quiz_page3():
 #   return render_template('quiz_page3.html')
-
 #@app.route('/quiz/page4')
 #def quiz_page4():
 #   return render_template('quiz_page4.html')
