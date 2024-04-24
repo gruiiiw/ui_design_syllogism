@@ -3,6 +3,8 @@ from flask import render_template
 from flask import Response, request, jsonify
 
 
+
+
 app = Flask(__name__)
 
 
@@ -179,10 +181,9 @@ quizzes = {
 }
 
 # ROUTES
-
 @app.route('/')
 def homepage():
-   return render_template('homepage.html')
+   return render_template('homepage.html', current_page='homepage')
 
 # Lesson Pages
 
