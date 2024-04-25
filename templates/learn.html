@@ -1,20 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type = "text/javascript">
-        $(document).ready(function(){
-            $("#nextBtn").click(function(){
-                window.location.href = "{{lesson.next_lesson}}";
-            });
-           
-                  
-            $("#backBtn").click(function(){
-                window.location.href = "{{lesson.prev_lesson}}";
-                            
-            });
-            
-            $(document).keydown(function(e) {
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#nextBtn").click(function(){
+            window.location.href = "{{lesson.next_lesson}}";
+        });
+        
+        $("#backBtn").click(function(){
+            window.location.href = "{{lesson.prev_lesson}}";
+        });
+        
+        $(document).keydown(function(e) {
             switch(e.which) {
                 case 39: // right arrow key
                     window.location.href = "{{lesson.next_lesson}}";
@@ -25,106 +23,95 @@
                 default: return; // exit this handler for other keys
             }
             e.preventDefault(); // prevent the default action (scroll / move caret)
-            });
-
-            let words = $('.word');
-            let index = 0;
-
-            function highlightNextWord() {
-                // Remove the highlight from the current word
-                if (words[index]) {
-                    $(words[index]).removeClass('highlight');
-                }
-                index++;
-                // Add the highlight to the next word
-                if (words[index]) {
-                    $(words[index]).addClass('highlight');
-                } else {
-                    // If there are no more words, stop the interval
-                    clearInterval(intervalId);
-                }
-                }
-
-                // Highlight the first word initially
-                if (words[0]) {
-                $(words[0]).addClass('highlight');
-                }
-
-                // Highlight the next word every 2 seconds
-                let intervalId = setInterval(highlightNextWord, 2000);
         });
 
+        let words = $('.word');
+        let index = 0;
 
+        function highlightNextWord() {
+            // Remove the highlight from the current word
+            if (words[index]) {
+                $(words[index]).removeClass('highlight-green');
+            }
+            index++;
+            // Add the highlight to the next word
+            if (words[index]) {
+                $(words[index]).addClass('highlight-green');
+            } else {
+                // If there are no more words, stop the interval
+                clearInterval(intervalId);
+            }
+        }
 
-    </script>
+        // Highlight the first word initially
+        if (words[0]) {
+            $(words[0]).addClass('highlight-green');
+        }
 
+        // Highlight the next word every 2 seconds
+        let intervalId = setInterval(highlightNextWord, 2000);
+    });
+</script>
 
-    <div class=" bodaniText">
-        <div class = "textLarge titlePadding">
-            {{lesson.title}}
-        </div>
+<div class="bodaniText">
+    <div class="textLarge titlePadding">
+        {{lesson.title}}
+    </div>
 
-        {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %} <!-- Add your terms here -->
+    {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
+    {% for word in lesson.text.split() %}
+        {% if word.lower()|contains_any(terms) %}
+            <span class="word" title="{{definition}}">{{word}}</span>
+        {% else %}
+            <span>{{word}}</span>
+        {% endif %}
+    {% endfor %}
 
-        {% for word in lesson.text.split() %}
-                {% if word.lower()|contains_any(terms) %}
-                    <span class="word" title="{{definition}}">{{word}}</span>
-                {% else %}
-                    <span>{{word}}</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{lesson.text1}}  <br>
+                {% for list in lesson.list1 %}
+                    {{list}} <br>
+                {% endfor %}
+
+                {% if lesson.images %}
+                    <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
                 {% endif %}
+            </div>
 
-        {% endfor %}
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    {{lesson.text1}}  <br>
-                    {% for list in lesson.list1 %}
-                        {{list}} <br>
-                    {% endfor %}
-
-                    {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
-                    {% endif %}
-                </div>
-        
-                <div class="col-md-6">
-                    {{lesson.text2}}  <br>
-                    {% for list in lesson.list2 %}
-                        {{list}} <br>
-                    {% endfor %}
-                    {% if lesson.images %}
-                        <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
-                    {% endif %}
-
-                </div>
+            <div class="col-md-6">
+                {{lesson.text2}}  <br>
+                {% for list in lesson.list2 %}
+                    {{list}} <br>
+                {% endfor %}
+                {% if lesson.images %}
+                    <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
+                {% endif %}
             </div>
         </div>
-        {% if lesson.text3 %}
-
-
-            {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
-            {% for word in lesson.text3.split() %}
-                {% if word.lower()|contains_any(terms3) %}
-                    <strong><span class="word">{{word}}</span></strong>
-                {% else %}
-                    <span>{{word}}</span>
-                {% endif %}
-            {% endfor %}
-
-        {% endif %}
-
-
     </div>
-
-    <div class="buttonContainer">
-        <button id="backBtn"><</button>
-
-        <button id="nextBtn">></button>
-    </div>
+    {% if lesson.text3 %}
 
 
+        {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+        
+        {% for word in lesson.text3.split() %}
+            {% if word.lower()|contains_any(terms3) %}
+                <strong><span class="word">{{word}}</span></strong>
+            {% else %}
+                <span>{{word}}</span>
+            {% endif %}
+        {% endfor %}
+
+    {% endif %}
 
 
+</div>
+
+<div class="buttonContainer">
+    <button id="backBtn"><</button>
+
+    <button id="nextBtn">></button>
+</div>
 {% endblock %}

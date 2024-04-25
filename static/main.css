@@ -50,15 +50,15 @@
 
 /* Forward/Back Button */
 
-.nextBtn{
+#nextBtn{
     background-color: #271905; /* Brown */
 }
 
-.nextBtn:hover {
+#nextBtn:hover {
     background-color: #543c2c; /* Lighter Brown */
 }
 
-.nextBtn, .backBtn {
+#nextBtn, #backBtn {
     border: none;
     cursor: pointer;
     width: 60px;
@@ -74,11 +74,11 @@
     padding: 0; /* remove padding if any */
 }
 
-.backBtn{
+#backBtn{
     background-color: gray; /* Light */
 }
 
-.backBtn:hover {
+#backBtn:hover {
     background-color: #666666; /* Dark Gray */
 }
 
