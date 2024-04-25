@@ -179,13 +179,11 @@ quizzes = {
 }
 
 # ROUTES
-
 @app.route('/')
 def homepage():
-   return render_template('homepage.html')
+   return render_template('homepage.html', current_page='homepage')
 
 # Lesson Pages
-
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
    lesson = lessons[lesson_id]
@@ -201,7 +199,7 @@ def quiz(quiz_id):
         # Make sure quiz['items'] is present and is a list
         if 'items' in quiz and isinstance(quiz['items'], list):
             print("Quiz Data:", quiz)  # Confirm the structure
-            return render_template('quiz.html', quiz=quiz)
+            return render_template('quiz.html', quiz=quiz, current_page='quiz' + quiz_id)
         else:
             return "Quiz data is malformed", 400
     else:
