@@ -199,7 +199,7 @@ def quiz(quiz_id):
         # Make sure quiz['items'] is present and is a list
         if 'items' in quiz and isinstance(quiz['items'], list):
             print("Quiz Data:", quiz)  # Confirm the structure
-            return render_template('quiz.html', quiz=quiz, current_page='quiz' + quiz_id)
+            return render_template('quiz.html', quiz=quiz)
         else:
             return "Quiz data is malformed", 400
     else:
