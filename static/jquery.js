@@ -41,11 +41,32 @@ $(document).ready(function () {
                 checkBuildCorrect();
             } else if (quizId === 3) {
                 checkSyllogismMapping();
+            } else if (quizId == 4) {
+                checkLogicalFallicies();
             }
         }
     });
 });
 
+function checkLogicalFallicies(){
+    let mappingCorrect = true; // Assume mapping is correct initially
+    let mappings = {
+        'b1': 'box1',
+        'b2': 'box2',
+        'b3': 'box3'
+    };
+
+    $('.category').each(function() {
+        let expectedItem = Object.keys(mappings).find(key => mappings[key] === this.id);
+        let actualItem = $(this).children('.item').attr('id');
+        if (actualItem !== expectedItem) {
+            mappingCorrect = false;
+        }
+    });
+
+    let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
+    $('#result').text(resultText).show();
+}
 function checkSyllogismMapping() {
     let mappingCorrect = true; // Assume mapping is correct initially
     let mappings = {

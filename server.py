@@ -168,7 +168,17 @@ quizzes = {
       "title": "Logical Fallacies",
       "text": "Classify the statements below:",
       "next":"/quiz/5",
-      "prev":"/learn/5"
+      "prev":"/learn/5",
+      "categories": [
+            {"id": "box1", "name": "Valid Syllogism"},
+            {"id": "box2", "name": "Affirming the consequent"},
+            {"id": "box3", "name": "Denying the antecedent"},
+        ],
+        "items": [
+            {"id": "b3", "name": "(1) All universities have students \n\n(2) No high schools are universities \n(3) Therefore, no high schools have students", "category": "b_3"},
+            {"id": "b1", "name": "(1) All horses are mammals \n(2) All mammals are animals \n(3) Therefore, all horses are animals", "category": "b_1"},
+            {"id": "b2", "name": "(1) All dogs are animals \n(2) Aristotle is an animal \n(3) Therefore, Aristotle is a dog.", "category": "b_2"},
+        ]
    },
    "5":{
       "quiz_id": "5",
