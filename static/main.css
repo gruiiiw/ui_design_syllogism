@@ -120,7 +120,19 @@
     align-items: center;
 }
 
-.item {
+.quiz-style-1 .item {
+    width: auto;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    background-color: #b07454;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+}
+.quiz-style-2 .item {
     width: auto;
     margin: 5px 10px;
     padding: 5px 10px;
@@ -221,57 +233,103 @@
 #result {
     visibility: visible !important;
 }
-/* General styling for categories in Quiz 3 */
+
 .quiz-style-3 .category {
-    width: 48%; /* Adjust width to fit two per row */
-    min-height: 100px; /* Adjust minimum height */
-    margin: 0 1%; /* Removes vertical margin completely, maintains horizontal margin */
-    padding: 20px 20px 20px 120px; /* Left padding increased to make space for the circle */
-    border: none; /* No border */
-    box-sizing: border-box; /* Ensures padding is included in width */
+    width: 48%;
+    min-height: 100px;
+    margin: 0 1%;
+    padding: 20px 20px 20px 120px;
+    border: none;
+    box-sizing: border-box;
     display: flex;
-    justify-content: flex-start; /* Aligns children starting from the left */
-    align-items: center; /* Centers content vertically */
-    background-color: #beafa0; /* Updated background color */
-    position: relative; /* Needed for absolute positioning of pseudo-elements */
+    justify-content: flex-start;
+    background-color: #beafa0;
+    position: relative;
 }
 
-/* Universal styling for the circle based on data-name attribute */
 .quiz-style-3 .category::before {
-    content: attr(data-name); /* Dynamically pulls name from data attribute */
-    background-color: #588c6c; /* Default green background */
-    color: white; /* White text color */
-    border-radius: 50%; /* Creates circle */
-    width: 100px; /* Width of the circle */
-    height: 100px; /* Height of the circle to match category box height */
-    position: absolute; /* Positioning it absolutely within the parent */
-    left: 10px; /* Positioned 10px from the left of the category box */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust vertical alignment */
-    font-size: 18px; /* Font size for visibility */
-    font-weight: bold; /* Makes the text bold */
-    display: flex; /* Ensures flexbox properties for centering text */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    content: attr(data-name);
+    background-color: #588c6c;
+    color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Specific override for categories with data-name="C" */
 .quiz-style-3 .category[data-name="C"]::before {
-    background-color: #4084ac; /* Blue background for "C" categories */
+    background-color: #4084ac;
 }
-
-
-
-
 
 .quiz-style-3 .item {
-    padding: 10px 15px; /* Slightly larger padding */
-    background-color: #b07454; /* Consistent with other quizzes */
-    border-radius: 25px; /* Rounded edges */
-    font-size: 14px; /* Smaller font size for better fit */
+    padding: 10px 15px;
+    background-color: #b07454;
+    border-radius: 25px;
+    font-size: 14px;
     color: white;
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
-    cursor: pointer; /* Indicates draggability */
+    cursor: pointer;
 }
+
+#quizContainer.quiz-style-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.quiz-style-4 .quiz-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quiz-style-4 .draggable-items {
+    width: 48%;
+    padding-right: 2%;
+    order: 1;
+}
+
+.quiz-style-4 .categories {
+    
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    order: 2;
+}
+
+.quiz-style-4 .item, .quiz-style-4 .category {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.quiz-style-4 .category {
+    background-color: transparent;
+    border: 3px solid #000000;
+    min-width: 500px;
+    width: 500px;
+    min-height: 120px;
+    text-align: start;
+    align-items: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.quiz-style-4 .bodaniText {
+    margin-bottom: 20px;
+}
+
 

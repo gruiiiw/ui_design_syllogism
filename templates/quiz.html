@@ -37,35 +37,39 @@
     <img src="{{ quiz.image }}" alt="Lesson image" />
     {% endif %}
   </div>
-
-  <div class="categories">
-    {% for category in quiz['categories'] %}
-    <div
-      draggable="true"
-      id="{{ category['id'] }}"
-      class="category"
-      data-name="{{ category['name'] }}"
-      ondragover="allowDrop(event)"
-      ondrop="drop(event, this)"
-    >
-      {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' %} {{ category['name']
-      }} {% endif %}
+  <div class="quiz-content">
+    <div class="categories">
+      {% for category in quiz['categories'] %}
+      {% if quiz.quiz_id == '4'%} {{ category['name']
+        }} {% endif %}
+      <div
+        draggable="true"
+        id="{{ category['id'] }}"
+        class="category"
+        data-name="{{ category['name'] }}"
+        ondragover="allowDrop(event)"
+        ondrop="drop(event, this)"
+      >
+        {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' and quiz.quiz_id != '4'%} {{ category['name']
+        }} {% endif %}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 
-  <div class="draggable-items">
-    {% for item in quiz['items'] %}
-    <div
-      draggable="true"
-      id="{{ item['id'] }}"
-      class="item"
-      ondragstart="drag(event)"
-      data-category="{{ item.category }}"
-    >
-      {{ item['name'] }}
+    <div class="draggable-items">
+      {% for item in quiz['items'] %}
+      <div
+        draggable="true"
+        id="{{ item['id'] }}"
+        class="item"
+        ondragstart="drag(event)"
+        data-category="{{ item.category }}"
+      >
+      <!-- {{ item['name'] | replace('\n', '<br>') }}  Replace \n with <br> tags for HTML -->
+        {{ item['name'] }}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 
   <div id="result" class="result"></div>

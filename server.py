@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, Markup
 from flask import Response, request, jsonify
 
 
@@ -175,7 +175,7 @@ quizzes = {
             {"id": "box3", "name": "Denying the antecedent"},
         ],
         "items": [
-            {"id": "b3", "name": "(1) All universities have students \n\n(2) No high schools are universities \n(3) Therefore, no high schools have students", "category": "b_3"},
+            {"id": "b3", "name": "(1) All universities have students \n(2) No high schools are universities \n(3) Therefore, no high schools have students", "category": "b_3"},
             {"id": "b1", "name": "(1) All horses are mammals \n(2) All mammals are animals \n(3) Therefore, all horses are animals", "category": "b_1"},
             {"id": "b2", "name": "(1) All dogs are animals \n(2) Aristotle is an animal \n(3) Therefore, Aristotle is a dog.", "category": "b_2"},
         ]
@@ -210,6 +210,8 @@ def quiz(quiz_id):
     if quiz:
         # Make sure quiz['items'] is present and is a list
         if 'items' in quiz and isinstance(quiz['items'], list):
+            for item in quiz['items']:
+                item['name'] = Markup(item['name'].replace("\n", "<br>"))
             print("Quiz Data:", quiz)  # Confirm the structure
             return render_template('quiz.html', quiz=quiz, current_page='quiz' + quiz_id)
         else:
