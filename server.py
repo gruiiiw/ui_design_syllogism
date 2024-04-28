@@ -121,7 +121,7 @@ quizzes = {
         "title": "Building Block 2: Propositions",
         "text": "Create three propositions using the terms and copula provided below",
         "next": "/learn/5",
-        "prev": "/learn/3",
+        "prev": "/learn/4",
         "categories": [
             {"id": "zone1", "name": "Zone 1"},
             {"id": "zone2", "name": "Zone 2"},
@@ -144,7 +144,7 @@ quizzes = {
       "title": "Building the Syllogism",
       "text": "Build two valid syllogisms using the propositions below. \n Make the first syllogism sound and the second syllogism unsound",
       "next":"/learn/6",
-      "prev":"/learn/4",
+      "prev":"/learn/5",
       "categories": [
             {"id": "z11", "name": "P1"},
             {"id": "z12", "name": "P1"},
@@ -168,7 +168,7 @@ quizzes = {
       "title": "Logical Fallacies",
       "text": "Classify the statements below:",
       "next":"/quiz/5",
-      "prev":"/learn/5",
+      "prev":"/learn/6",
       "categories": [
             {"id": "box1", "name": "Valid Syllogism"},
             {"id": "box2", "name": "Affirming the consequent"},
@@ -185,7 +185,24 @@ quizzes = {
       "title": "Putting it all together",
       "text": "",
       "next":"/",
-      "prev":"/learn/5"
+      "prev":"/learn/5",
+      "categories": [
+            {"id": "v1", "name": "(1)"},
+            {"id": "v2", "name": "(2)"},
+            {"id": "v3", "name": "(3) Therefore, "},
+            {"id": "f1", "name": "(1)"},
+            {"id": "f2", "name": "(2)"},
+            {"id": "f3", "name": "(3) Therefore, "},
+        ],
+        "items": [
+            {"id": "prompt1", "name": "reptiles", "category": "pt1"},
+            {"id": "prompt2", "name": "a snake", "category": "pt2"},
+            {"id": "prompt3", "name": "Mikey", "category": "pt3"},
+            {"id": "prompt4", "name": "a reptile", "category": "pt4"},
+            {"id": "prompt5", "name": "All snakes", "category": "pt5"},
+            {"id": "prompt6", "name": "are", "category": "pt6"},
+            {"id": "prompt7", "name": "is", "category": "pt7"},
+        ]
    }
 
 }
@@ -202,8 +219,6 @@ def learn(lesson_id):
    return render_template('learn.html', lesson=lesson, current_page='learn' + lesson_id)
 
 # Quiz Pages - We need to have something to store the score
-
-
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     quiz = quizzes.get(quiz_id)

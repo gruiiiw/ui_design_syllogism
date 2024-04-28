@@ -3,9 +3,52 @@ $(document).ready(function () {
     var quizId = $('#quizContainer').data('quiz-id');
     console.log("Quiz ID:", quizId); // Debug the quizId
 
-    $('.item').on('dragstart', function (event) {
-        console.log("Drag started for:", this.id);
-        event.originalEvent.dataTransfer.setData('text', this.id);
+    //$('.item').on('dragstart', function (event) {
+    //    console.log("Drag started for:", this.id);
+    //    event.originalEvent.dataTransfer.setData('text', this.id);
+    //});
+
+    function handleDragStart(event) {
+        var isInDropZone = $(this).closest('.category').length > 0; // Check if the item is in a drop zone
+        if (quizId == 5 && !isInDropZone) {
+            var clone = this.cloneNode(true);
+            var newId = 'clone_' + new Date().getTime();
+            clone.id = newId;
+            clone.setAttribute('draggable', 'true');
+            document.body.appendChild(clone); // Append clone to the body
+            event.originalEvent.dataTransfer.setDragImage(clone, 0, 0); // Use the clone as the drag image
+            event.originalEvent.dataTransfer.setData('text', newId);
+            $(clone).data('dropped', false); // Mark the clone as not dropped
+        } else {
+            event.originalEvent.dataTransfer.setData('text', this.id);
+        }
+    }
+    
+    // Apply dragstart event to all .item elements and future .item elements
+    $(document).on('dragstart', '.item', handleDragStart);
+    
+    $('.category').on('dragover', function (event) {
+        event.preventDefault(); // Necessary to allow a drop
+    });
+    
+    $('.category').on('drop', function (event) {
+        event.preventDefault();
+        var data = event.originalEvent.dataTransfer.getData('text');
+        var draggableElement = document.getElementById(data);
+        if (draggableElement && !this.contains(draggableElement)) {
+            this.appendChild(draggableElement);
+            $(draggableElement).data('dropped', true); // Mark as successfully dropped
+        }
+    });
+    
+    // Remove clone if not successfully dropped into a category box
+    $(document).on('dragend', '.item', function (event) {
+        var cloneId = event.originalEvent.dataTransfer.getData('text');
+        var cloneElement = document.getElementById(cloneId);
+        // Check if the clone was not dropped successfully and needs to be removed
+        if (cloneElement && !$(cloneElement).data('dropped') && cloneId.startsWith('clone_')) {
+            cloneElement.parentNode.removeChild(cloneElement);
+        }
     });
 
     $('.category').on('dragover', function (event) {
@@ -43,6 +86,9 @@ $(document).ready(function () {
                 checkSyllogismMapping();
             } else if (quizId == 4) {
                 checkLogicalFallicies();
+            } else if (quizId == 5) {
+                var cloneId = event.originalEvent.dataTransfer.getData('text');
+                $('#' + cloneId).remove(); // Remove the clone after dropping
             }
         }
     });
