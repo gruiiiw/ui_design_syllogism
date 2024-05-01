@@ -74,6 +74,14 @@
     font-size: 36px;
 }
 
+
+@keyframes flash {
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+
 #equalsButton{
     background-color: #DDBC8A; /* yellow */
     border: none;
@@ -82,6 +90,8 @@
     padding: 15px 32px;
     font-size: 36px;
     outline: none;
+    animation: flash 3s infinite;
+
 }
 
 #equalsButton2{
@@ -92,6 +102,8 @@
     padding: 15px 32px;
     font-size: 36px;
     outline: none;
+    animation: flash 3s infinite;
+
 }
 
 
