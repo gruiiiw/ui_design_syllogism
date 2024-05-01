@@ -13,10 +13,9 @@ lessons = {
       "lesson_id": "1",
       "title": "What is a Syllogism",
       "text": "Syllogisms: a syllogism is a specific form of argument through which we infer a conclusion on the basis of two premises;",
-      "text1_1": "\nSyllogisms are central to logic, which is the study of correct patterns of reasoning. Logic is all about argument and persuasion.\n\nTo understand syllogisms, we need to understand their parts:",
+      "text1_1": "\nSyllogisms are central to logic, which is the study of correct patterns of reasoning.",
       "next_lesson":"/learn/2",
       "prev_lesson":"/", 
-      "image":["images/learn1.png"]
    },
 
    "2":{
@@ -45,18 +44,6 @@ lessons = {
    "4":{
       "lesson_id": "4",
       "title": "Building Block 2: Propositions",
-      "text": """A proposition involves connecting two terms,
-      a subject and a predicate , sometimes using
-      a copula, or a connector, such as “is,” “are”,
-      “was”, or “were.”
-
-      Propositions take the form of a declarative
-      sentence and can always be true or false
-
-      Example:
-      “I am hungry. ” is a proposition;
-
-      “Feed me!” is not.""",
       "next_lesson":"/quiz/2",
       "prev_lesson":"/quiz/1"
    },

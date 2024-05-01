@@ -36,6 +36,84 @@
 .navLine{
     border-top: 3px solid #967d55;
 }
+/* Learning Graphics*/
+.term{
+    color: #A87456;
+    font-weight: bold;
+}
+
+.premise{    
+    background-color: #55896B; /* Green */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 15px 32px;
+    margin: 50px;
+}
+
+.tan-button{
+    background-color: #DDBC8A; /* Green */
+    border: none;
+    border-radius: 40px; 
+    color: white;
+    padding: 15px 32px;
+    margin: 20px;
+}
+
+#equalsButton{
+    background-color: #DDBC8A; /* yellow */
+    border: none;
+    border-radius: 40px; 
+    color: white;
+    padding: 15px 32px;
+}
+
+#equalsButton:hover {
+    background-color: #f2d3a5 
+    
+}
+
+.subject{
+    background-color: #3D82AB; /* blue */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 10px;
+}
+
+.predicate{
+    background-color: #55896B; /* Green */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 10px;
+}
+.copula{
+    background-color:  #DDBC8A; /* yellow */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 10px;
+}
+
+#conclusionButton{
+    margin-left: 40px;
+    background-color: #3D82AB; /*blue */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 15px 32px;
+}
+
+#showMoreButton{
+    margin-left: 40px;
+    background-color: #3D82AB; /*blue */
+    border: none;
+    border-radius: 30px; 
+    color: white;
+    padding: 15px 32px;
+}
+
 
 /* Start Button */
 
