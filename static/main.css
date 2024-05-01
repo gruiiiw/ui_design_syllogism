@@ -49,7 +49,7 @@
     color: white;
     padding: 15px 32px;
     margin: 50px;
-    font-size: 40px;
+    font-size: 36px;
 
 }
 
@@ -60,7 +60,7 @@
     color: white;
     padding: 15px 32px;
     margin: 20px;
-    font-size: 40px;
+    font-size: 36px;
 
 }
 
@@ -70,11 +70,14 @@
     border-radius: 40px; 
     color: white;
     padding: 15px 32px;
-    font-size: 40px;
+    font-size: 36px;
+    outline: none;
+
 }
 
 #equalsButton:hover {
-    background-color: #f2d3a5 
+    background-color: #f2d3a5; 
+    cursor: pointer;
 }
 
 .subject{
@@ -107,6 +110,7 @@
     border-radius: 30px; 
     color: white;
     padding: 15px 32px;
+    font-size: 36px;
 }
 
 #showMoreButton{
@@ -391,6 +395,11 @@
     font-family: 'Manrope', sans-serif;
     cursor: pointer;
 }
+
+.quiz-style-3 .item:hover {
+    background-color: #a06443;
+}
+
 
 #quizContainer.quiz-style-4 {
     display: flex;
