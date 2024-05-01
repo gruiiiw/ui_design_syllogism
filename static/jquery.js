@@ -8,10 +8,19 @@ $(document).ready(function () {
     //    event.originalEvent.dataTransfer.setData('text', this.id);
     //});
 
+    //Startbutton event listener (enter = start button click)
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            document.querySelector('.startBtn').click();
+        }
+    });
+
+
     function handleDragStart(event) {
         var isInDropZone = $(this).closest('.category').length > 0; // Check if the item is in a drop zone
+        
         if (quizId == 5 && !isInDropZone) {
-            var clone = this.cloneNode(true);
+            var clone = this.cloneNode(true); // copy of node on which its called 
             var newId = 'clone_' + new Date().getTime();
             clone.id = newId;
             clone.setAttribute('draggable', 'true');
@@ -19,37 +28,51 @@ $(document).ready(function () {
             event.originalEvent.dataTransfer.setDragImage(clone, 0, 0); // Use the clone as the drag image
             event.originalEvent.dataTransfer.setData('text', newId);
             $(clone).data('dropped', false); // Mark the clone as not dropped
-        } else {
+            
+            var test = event.originalEvent.dataTransfer.getData('text');
+            console.log(test);
+        } 
+       
+        else {
             event.originalEvent.dataTransfer.setData('text', this.id);
+            var test = event.originalEvent.dataTransfer.getData('text');
+            console.log(test);
         }
+
     }
     
     // Apply dragstart event to all .item elements and future .item elements
     $(document).on('dragstart', '.item', handleDragStart);
-    
+
+
     $('.category').on('dragover', function (event) {
         event.preventDefault(); // Necessary to allow a drop
     });
     
-    $('.category').on('drop', function (event) {
+    $('.category').on('drop', function (event) { // Drop event for category
         event.preventDefault();
         var data = event.originalEvent.dataTransfer.getData('text');
+        console.log(data);
         var draggableElement = document.getElementById(data);
         if (draggableElement && !this.contains(draggableElement)) {
             this.appendChild(draggableElement);
             $(draggableElement).data('dropped', true); // Mark as successfully dropped
         }
     });
-    
+
     // Remove clone if not successfully dropped into a category box
     $(document).on('dragend', '.item', function (event) {
+        
         var cloneId = event.originalEvent.dataTransfer.getData('text');
-        var cloneElement = document.getElementById(cloneId);
+        var cloneElement = document.getElementById(cloneId); 
+        console.log(cloneId); // nothing
+        console.log(cloneElement); // null
         // Check if the clone was not dropped successfully and needs to be removed
         if (cloneElement && !$(cloneElement).data('dropped') && cloneId.startsWith('clone_')) {
             cloneElement.parentNode.removeChild(cloneElement);
         }
     });
+
 
     $('.category').on('dragover', function (event) {
         console.log("Drag over category:", this.id);

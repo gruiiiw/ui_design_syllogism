@@ -3,7 +3,12 @@
 .beigeBackground {
     background-color: #f4eadb;
     font-size: 20px;
-    
+}
+
+.center-content{
+    justify-content: center;
+    text-align: center;    
+    padding-top: 100px;
 }
 
 .titlePadding {
@@ -89,7 +94,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 100px;
+    padding: 0px;
     z-index: 4;
 }
 
@@ -103,9 +108,14 @@
 
 .categories, .draggable-items {
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     flex-wrap: wrap;
     z-index: 5;
+}
+
+.category:hover {
+    background-color:#f7f1e9; /* Change background color when hover */
 }
 
 .category {
@@ -132,6 +142,11 @@
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
 }
+
+.quiz-style-1 .item:hover {
+    background-color: #a66745; /* Change background color when hover */
+}
+
 .quiz-style-2 .item {
     width: auto;
     margin: 5px 10px;
@@ -145,6 +160,9 @@
     font-family: 'Manrope', sans-serif;
 }
 
+.quiz-style-2 .item:hover {
+    background-color: #a66745; /* Change background color when hover */
+}
 
 #result {
     clear: both;
