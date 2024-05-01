@@ -106,14 +106,22 @@
 }
 
 #showMoreButton{
-    margin-left: 40px;
     background-color: #3D82AB; /*blue */
     border: none;
     border-radius: 30px; 
     color: white;
-    padding: 15px 32px;
+    padding: 10px;
 }
 
+#showMoreButton:hover {
+    background-color: #2c6b90; /*blue dark*/
+}
+
+#moreExamples{
+    border: none;
+    background-color: #f4eadb; /*blue */
+
+}
 
 /* Start Button */
 

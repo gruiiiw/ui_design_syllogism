@@ -56,7 +56,7 @@
         });
 
         document.getElementById('showMoreButton').addEventListener('click', function() {
-            document.getElementById('moreExamples').style.display = 'block';
+            document.getElementById('moreExamples').style.display = 'inline-block';
         });
 
 
@@ -130,15 +130,20 @@
                 Propositions take the form of a declarative sentence and are always <strong> true </strong> or <strong>  false </strong> 
                 <br><br>
                 “<span class= "subject">I</span> <span class= "copula">am</span> <span class= "predicate">hungry.</span>” is a proposition;
-                <br>  
                 “Feed me!” is not.
-                <br>
+                <br><br>
 
                 <button id="showMoreButton">Click for more Examples</button>
-                <div id="moreExamples" style="display: none;">
-                    <!-- Your examples go here -->
-                </div>
+                <button id="moreExamples" style="display: none;">
+                    <span class= "subject">She</span> <span class= "copula">is</span> <span class= "predicate">jumping.</span>
+                    <br><br>
+                       <span class= "subject">Samantha</span> <span class= "copula">is</span> <span class= "predicate">an athletic cat.</span>
+                    <br><br>
+                    <span class= "subject">He</span> <span class= "copula">was</span> <span class= "predicate">sprinting quickly.</span>                
+                
+                </button>
 
+                <button id="equalsButton" style="display: none;"> </button>
             {% endif %}
 
 
