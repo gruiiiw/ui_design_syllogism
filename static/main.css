@@ -12,7 +12,6 @@
 
 .right-align{
     text-align: right;
-    margin-right: 200px;
 }
 
 .titlePadding {
@@ -46,14 +45,18 @@
     font-weight: bold;
 }
 
+.margin20{
+    margin: 20px;
+}
+
 .premise{    
     background-color: #55896B; /* Green */
     border: none;
     border-radius: 30px; 
     color: white;
     padding: 15px 32px;
-    margin: 40px;
     font-size: 36px;
+    max-width: 200px; /* Add this line */
 }
 
 .tan-button{
@@ -61,10 +64,8 @@
     border: none;
     border-radius: 40px; 
     color: white;
-    padding: 15px 32px;
-    margin: 40px;
+    padding: 15px 25px;
     font-size: 36px;
-
 }
 
 #equalsButton{
@@ -75,10 +76,25 @@
     padding: 15px 32px;
     font-size: 36px;
     outline: none;
-
 }
 
+#equalsButton2{
+    background-color: #DDBC8A; /* yellow */
+    border: none;
+    border-radius: 40px; 
+    color: white;
+    padding: 15px 32px;
+    font-size: 36px;
+    outline: none;
+}
+
+
 #equalsButton:hover {
+    background-color: #f2d3a5; 
+    cursor: pointer;
+}
+
+#equalsButton2:hover {
     background-color: #f2d3a5; 
     cursor: pointer;
 }
@@ -106,7 +122,7 @@
     padding: 10px;
 }
 
-#conclusionButton{
+#conclusionButton, #conclusionButton2{
     margin-left: 40px;
     background-color: #3D82AB; /*blue */
     border: none;
@@ -139,27 +155,29 @@
 /* Start Button */
 
 .startBtn {
-    background-color: #271905; /* Brown */
+    background-color: #55896B; /* green */
     border: none;
     border-radius: 12px; 
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 32px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Bodani FLF';
+    outline: none;
 }
 
 .startBtn:hover {
-    background-color: #3d2b1f; /* Lighter Brown */
+    background-color: #38694d; /* darker green */
 }
 
 /* Forward/Back Button */
 
 #nextBtn{
     background-color: #271905; /* Brown */
+    outline: none;
 }
 
 #nextBtn:hover {
@@ -180,6 +198,7 @@
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
     padding: 0; /* remove padding if any */
+    outline: none;
 }
 
 #backBtn{
@@ -209,6 +228,8 @@
     margin-left: auto;
 }
 
+
+/* Quiz css */
 .categories, .draggable-items {
     display: flex;
     cursor: pointer;

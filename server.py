@@ -25,14 +25,13 @@ lessons = {
  \n Syllogisms are distinguished by the fact that the two premises have exactly one term in common.""",
       "next_lesson":"/learn/2.5",
       "prev_lesson":"/learn/1",
-      "image":["images/learn2.png"]
    },
 
    
    "2.5":{
       "lesson_id": "2.5",
       "title": "What is a Syllogism",
-      "text": "Can you start to see these parts in the following example?:",
+      "text": "Can you start to see these parts in the following examples?:",
       "next_lesson":"/learn/3",
       "prev_lesson":"/learn/2",
    },
@@ -44,7 +43,7 @@ lessons = {
       "text2_1":"""A term is either a noun, adjective, or verb, and it refers to a category of things. """,
 
       "next_lesson":"/quiz/1",
-      "prev_lesson":"/learn/2",
+      "prev_lesson":"/learn/2.5",
       "image":["images/learn3.png"]
 
    },

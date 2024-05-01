@@ -50,14 +50,17 @@
 
         // Highlight the next word every 2 seconds
         let intervalId = setInterval(highlightNextWord, 2000);
+        
+
 
         document.getElementById('equalsButton').addEventListener('click', function() {
             document.getElementById('conclusionButton').style.display = 'inline-block';
         });
 
-        document.getElementById('showMoreButton').addEventListener('click', function() {
-            document.getElementById('moreExamples').style.display = 'inline-block';
+        document.getElementById('equalsButton2').addEventListener('click', function() {
+            document.getElementById('conclusionButton2').style.display = 'inline-block';
         });
+
 
 
     });
@@ -102,7 +105,8 @@
 
             {% if lesson.lesson_id == '1' %}
                 <br>
-                <span class = "premise">premise</span> <span class = "tan-button"> + </span> <span class = "premise">premise</span>
+                <span class = "premise margin20">Premise</span> <span class = "tan-button"> + </span> 
+                <span class = "premise margin20">Premise</span>
                 <button id="equalsButton" style="display: inline-block; white-space: nowrap;"> = </button>
                 <button id="conclusionButton" style="display: none; white-space: nowrap;">Conclusion</button>
                 <br><br>
@@ -113,18 +117,50 @@
                 To understand syllogisms, we need to understand their parts:
             {% endif %}
 
+            {% if lesson.lesson_id == '2' %}
+                <br>
+                <span class = "premise textSmall margin20"> Premise (Proposition) <span class= "predicate"> Term </span></span>
+                <span class = "tan-button textSmall"> + </span>
+                <span class = "premise textSmall margin20"> Premise (Proposition) <span class= "predicate"> Term </span></span>
+                <br><br>
+                <button id="equalsButton" style="font-size:26px; inline-block; white-space: nowrap;"> = </button>
+                <button id="conclusionButton" style="font-size:26px; display: none; white-space: nowrap;">Conclusion</button>
+            {% endif %}
+
 
             {% if lesson.lesson_id == '2.5' %}
-                <br>
-                <div class = "right-align">
-                <span class = "premise">Premise 1: <span class= "subject"> All people</span> <span class= "copula"> are </span> <span class= "predicate"> Mortal </span></span>
-                <br><br>
-                <span class = "tan-button"> + </span>
-                <span class = "premise">Premise 2: <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> a person </span> </span>
-                <br><br>
-                <button id="equalsButton" style="display: inline-block; white-space: nowrap;"> = </button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <div class = "right-align">
+                                <br>
+                                <span class = "premise textSmall">Premise 1: <span class= "subject"> All people</span> <span class= "copula"> are </span> <span class= "predicate"> Mortal </span></span>
+                                <br><br>
+                                <span class = "tan-button textSmall">+</span>
+                                <span class = "premise textSmall">Premise 2: <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> a person </span> </span>
+                                <br><br>
+                                <button id="equalsButton" style="font-size:26px; display: inline-block; white-space: nowrap;"> = </button>
+                                <br><br>
+                                <button id="conclusionButton" style="font-size:26px; display: none; white-space: nowrap;">Conclusion: <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> Mortal </span></button>
+                                </div>
+                            </div>
 
-                <button id="conclusionButton" style="display: none; white-space: nowrap;">Conclusion (C): <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> Mortal </span></button>
+                        <div class="col-sm-6">
+                            <div class = "right-align">
+                                <br>
+                                <span class = "premise textSmall">Premise 3: <span class= "subject"> All animals </span> <span class= "copula"> are </span> <span class= "predicate"> kind </span></span>
+                                <br><br>
+                                <span class = "tan-button textSmall">+</span>
+                                <span class = "premise textSmall">Premise 4: <span class= "subject"> Sam </span> <span class= "copula"> is </span> <span class= "predicate"> an animal </span> </span>
+                                <br><br>
+                                <button id="equalsButton2" style="font-size:26px; display: inline-block; white-space: nowrap;"> = </button>
+                                <br><br>
+                                <button id="conclusionButton2" style="font-size:26px; display: none; white-space: nowrap;">Conclusion: <span class= "subject"> Sam </span> <span class= "copula"> is </span> <span class= "predicate"> kind </span></button>
+                            </div>
+                        
+                        </div>
+
+                    </div>
                 </div>
             {% endif %}
 
@@ -146,8 +182,8 @@
                 “Feed me!” is not.
                 <br><br>
 
-                <button id="showMoreButton">Click for more Examples</button>
-                <button id="moreExamples" style="display: none;">
+                <button id="equalsButton" style="font-size:26px;">Click for more Examples</button>
+                <button id="conclusionButton" style="font-size:26px; display: none;">
                     <span class= "subject">She</span> <span class= "copula">is</span> <span class= "predicate">jumping.</span>
                     <br><br>
                        <span class= "subject">Samantha</span> <span class= "copula">is</span> <span class= "predicate">an athletic cat.</span>
@@ -156,7 +192,6 @@
                 
                 </button>
 
-                <button id="equalsButton" style="display: none;"> </button>
             {% endif %}
 
 
