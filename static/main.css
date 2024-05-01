@@ -86,7 +86,7 @@
     border: none;
     border-radius: 40px; 
     color: white;
-    padding: 15px 32px;
+    padding: 15px 30px;
     font-size: 36px;
     outline: none;
     animation: flash 5s infinite;
@@ -99,7 +99,7 @@
     border: none;
     border-radius: 40px; 
     color: white;
-    padding: 15px 32px;
+    padding: 15px 30px;
     font-size: 36px;
     outline: none;
     animation: flash 5s infinite;
@@ -176,6 +176,8 @@
 
 
 }
+
+
 
 
 /* Start Button */
