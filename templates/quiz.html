@@ -1,58 +1,83 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
+<div
+  id="quizContainer"
+  class="quiz-style-{{ quiz.quiz_id }}"
+  data-quiz-id="{{ quiz.quiz_id }}"
+>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#nextBtn").click(function () {
+        window.location.href = "{{ quiz.next }}";
+      });
 
-{% block content %}
-<script type="text/javascript">
-  $(document).ready(function () {
-    $("#nextBtn").click(function () {
-      window.location.href = "{{ quiz.next }}";
+      $("#backBtn").click(function () {
+        window.location.href = "{{ quiz.prev }}";
+      });
+
+      $(document).keydown(function (e) {
+        switch (e.which) {
+          case 39: // right arrow key
+            window.location.href = "{{ quiz.next }}";
+            break;
+          case 37: // left arrow key
+            window.location.href = "{{ quiz.prev }}";
+            break;
+          default:
+            return; // exit this handler for other keys
+        }
+        e.preventDefault(); // prevent the default action (scroll / move caret)
+      });
     });
+  </script>
 
-    $("#backBtn").click(function () {
-      window.location.href = "{{ quiz.prev }}";
-    });
-
-    $(document).keydown(function (e) {
-      switch (e.which) {
-        case 39: // right arrow key
-          window.location.href = "{{ quiz.next }}";
-          break;
-        case 37: // left arrow key
-          window.location.href = "{{ quiz.prev }}";
-          break;
-        default:
-          return; // exit this handler for other keys
-      }
-      e.preventDefault(); // prevent the default action (scroll / move caret)
-    });
-  });
-</script>
-
-<div class="bodaniText">
+  <div class="bodaniText">
     <div class="textLarge titlePadding">{{ quiz.title }}</div>
     <p>{{ quiz.text }}</p>
     {% if quiz.image %}
     <img src="{{ quiz.image }}" alt="Lesson image" />
     {% endif %}
-</div>
-
-<div class="categories">
-    {% for category in quiz['categories'] %}
-    <div draggable="true" id="{{ category['id'] }}" class="category" ondragover="allowDrop(event)" ondrop="drop(event, this)">
-        {{ category['name'] }}
+  </div>
+  <div class="quiz-content">
+    <div class="categories">
+      {% for category in quiz['categories'] %}
+      {% if quiz.quiz_id == '4'%} {{ category['name']
+        }} {% endif %}
+      <div
+        draggable="true"
+        id="{{ category['id'] }}"
+        class="category"
+        data-name="{{ category['name'] }}"
+        ondragover="allowDrop(event)"
+        ondrop="drop(event, this)"
+      >
+        {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' and quiz.quiz_id != '4'%} {{ category['name']
+        }} {% endif %}
+      </div>
+      {% endfor %}
     </div>
-  {% endfor %}
 
+    <div class="draggable-items">
+      {% for item in quiz['items'] %}
+      <div
+        draggable="true"
+        id="{{ item['id'] }}"
+        class="item"
+        ondragstart="drag(event)"
+        data-category="{{ item.category }}"
+      >
+      <!-- {{ item['name'] | replace('\n', '<br>') }}  Replace \n with <br> tags for HTML -->
+        {{ item['name'] }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <div class="buttonContainer">
+    <button id="backBtn" class="backBtn">&lt;</button>
+    <button id="nextBtn" class="nextBtn">&gt;</button>
+  </div>
 </div>
-
-<div class="draggable-items">
-  {% for item in quiz['items'] %}
-  <div draggable="true" id="{{ item['id'] }}" class="item" ondragstart="drag(event)" data-category="{{ item.category }}">
-    {{ item['name'] }}
-</div>
-  {% endfor %}
-</div>
-
-<div id="result" class="result"></div>
-
-
+<!-- Closing quiz container -->
 {% endblock %}

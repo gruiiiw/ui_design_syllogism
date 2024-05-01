@@ -1,27 +1,151 @@
-{% extends "layout.html" %}
-
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <div class="bodaniText">
-    <div class="textLarge">{{ quiz.title }}</div>
-    <p>{{ quiz.text }}</p>
+  <div class="textLarge">BUILDING BLOCK 1: TERMS</div>
+  <p>Exercise: Drag the following terms into their respective categories</p>
 </div>
 
 <div class="categories">
-    <div id="us-states" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">US States</div>
-    <div id="horses" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">Horses</div>
-    <div id="speaking-things" class="category" ondrop="drop(event, this)" ondragover="allowDrop(event)">Speaking Things</div>
+  <div
+    id="us-states"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    US States
+  </div>
+  <div
+    id="horses"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    Horses
+  </div>
+  <div
+    id="speaking-things"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    Speaking Things
+  </div>
 </div>
 
 <div class="draggable-items">
-    {% for item in quiz.items %}
-    <div draggable="true" id="{{ item.id }}" class="item" ondragstart="drag(event)">{{ item.name }}</div>
-    {% endfor %}
+  <div draggable="true" id="oregon" class="item" ondragstart="drag(event)">
+    Oregon
+  </div>
+  <div
+    draggable="true"
+    id="horse-over-there"
+    class="item"
+    ondragstart="drag(event)"
+  >
+    that horse over there
+  </div>
+  <div draggable="true" id="speaks" class="item" ondragstart="drag(event)">
+    speaks
+  </div>
+  <div
+    draggable="true"
+    id="rocky-mountain"
+    class="item"
+    ondragstart="drag(event)"
+  >
+    The Rocky Mountain State
+  </div>
+  <div draggable="true" id="secretariat" class="item" ondragstart="drag(event)">
+    Secretariat
+  </div>
+  <div draggable="true" id="speak" class="item" ondragstart="drag(event)">
+    speak
+  </div>
+  <div draggable="true" id="utah" class="item" ondragstart="drag(event)">
+    Utah
+  </div>
 </div>
 
 <div id="result" class="result"></div>
 
 <div class="buttonContainer">
-    <a href="{{ quiz.prev }}"><button class="backBtn">&lt;</button></a>
-    <a href="{{ quiz.next }}"><button class="nextBtn">&gt;</button></a>
+  <a href="/quiz/page1"><button class="backBtn">&lt;</button></a>
+  <a href="/quiz/page3"><button class="nextBtn">&gt;</button></a>
 </div>
+
+<script></script>
+{% endblock %} {% extends "layout.html" %} {% block content %}
+<div class="bodaniText">
+  <div class="textLarge">BUILDING BLOCK 1: TERMS</div>
+  <p>Exercise: Drag the following terms into their respective categories</p>
+</div>
+
+<div class="categories">
+  <div
+    id="us-states"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    US States
+  </div>
+  <div
+    id="horses"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    Horses
+  </div>
+  <div
+    id="speaking-things"
+    class="category"
+    ondrop="drop(event, this)"
+    ondragover="allowDrop(event)"
+  >
+    Speaking Things
+  </div>
+</div>
+
+<div class="draggable-items">
+  <div draggable="true" id="oregon" class="item" ondragstart="drag(event)">
+    Oregon
+  </div>
+  <div
+    draggable="true"
+    id="horse-over-there"
+    class="item"
+    ondragstart="drag(event)"
+  >
+    that horse over there
+  </div>
+  <div draggable="true" id="speaks" class="item" ondragstart="drag(event)">
+    speaks
+  </div>
+  <div
+    draggable="true"
+    id="rocky-mountain"
+    class="item"
+    ondragstart="drag(event)"
+  >
+    The Rocky Mountain State
+  </div>
+  <div draggable="true" id="secretariat" class="item" ondragstart="drag(event)">
+    Secretariat
+  </div>
+  <div draggable="true" id="speak" class="item" ondragstart="drag(event)">
+    speak
+  </div>
+  <div draggable="true" id="utah" class="item" ondragstart="drag(event)">
+    Utah
+  </div>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="buttonContainer">
+  <a href="/quiz/page1"><button class="backBtn">&lt;</button></a>
+  <a href="/quiz/page3"><button class="nextBtn">&gt;</button></a>
+</div>
+
+<script></script>
 {% endblock %}

@@ -31,12 +31,12 @@
         function highlightNextWord() {
             // Remove the highlight from the current word
             if (words[index]) {
-                $(words[index]).removeClass('highlight');
+                $(words[index]).removeClass('highlight-green');
             }
             index++;
             // Add the highlight to the next word
             if (words[index]) {
-                $(words[index]).addClass('highlight');
+                $(words[index]).addClass('highlight-green');
             } else {
                 // If there are no more words, stop the interval
                 clearInterval(intervalId);
@@ -45,11 +45,21 @@
 
         // Highlight the first word initially
         if (words[0]) {
-            $(words[0]).addClass('highlight');
+            $(words[0]).addClass('highlight-green');
         }
 
         // Highlight the next word every 2 seconds
         let intervalId = setInterval(highlightNextWord, 2000);
+
+        document.getElementById('equalsButton').addEventListener('click', function() {
+            document.getElementById('conclusionButton').style.display = 'inline-block';
+        });
+
+        document.getElementById('showMoreButton').addEventListener('click', function() {
+            document.getElementById('moreExamples').style.display = 'inline-block';
+        });
+
+
     });
 </script>
 
@@ -58,52 +68,131 @@
         {{lesson.title}}
     </div>
 
-    {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
-    {% for word in lesson.text.split() %}
-        {% if word.lower()|contains_any(terms) %}
-            <span class="word" title="{{definition}}">{{word}}</span>
-        {% else %}
-            <span>{{word}}</span>
-        {% endif %}
-    {% endfor %}
+        <div class= "textSmall">
+                
+            <!-- Learn 1 -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                {{lesson.text1}}  <br>
-                {% for list in lesson.list1 %}
-                    {{list}} <br>
+            {% if lesson.text %}            
+                {% set lines = lesson.text.split('\n') %}
+                {% for line in lines %}
+                    {% set words = line.split() %}
+                    {% for word in words %}
+                        {% if loop.index0 == 0 %}
+                            <strong>{{ word }}</strong>
+                        {% else %}
+                            {% if word.lower() == 'conclusion' %}
+                                <strong><span style="color: #3D82AB;">{{ word }}</span></strong>
+                            {% elif word.lower() == 'syllogisms' %}
+                                <strong>{{ word }}</strong>
+                            {% elif word.lower() == 'premises' %}
+                                <strong><span style="color: #55896B;">{{ word }}</span></strong>
+                            {% elif word.lower() == 'terms' %}
+                                <strong><span style="color: #A87456;">{{ word }}</span></strong>
+                            {% else %}
+                                {{ word }}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <br>
                 {% endfor %}
 
-                {% if lesson.images %}
-                    <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
-                {% endif %}
-            </div>
-
-            <div class="col-md-6">
-                {{lesson.text2}}  <br>
-                {% for list in lesson.list2 %}
-                    {{list}} <br>
-                {% endfor %}
-                {% if lesson.images %}
-                    <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    {% if lesson.text3 %}
-
-
-        {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
-        {% for word in lesson.text3.split() %}
-            {% if word.lower()|contains_any(terms3) %}
-                <strong><span class="word">{{word}}</span></strong>
-            {% else %}
-                <span>{{word}}</span>
             {% endif %}
-        {% endfor %}
 
-    {% endif %}
+
+
+            {% if lesson.lesson_id == '1' %}
+                <br>
+                <span class = "premise">premise</span> <span class = "tan-button"> + </span> <span class = "premise">premise</span>
+                <button id="equalsButton" style="display: inline-block; white-space: nowrap;"> = </button>
+                <button id="conclusionButton" style="display: none; white-space: nowrap;">Conclusion</button>
+                <br><br>
+                Syllogisms are central to logic, which is the study of correct patterns of reasoning. 
+                <br>
+                Logic is all about <strong>argument</strong> and <strong>persuasion</strong>.
+                <br><br>
+                To understand syllogisms, we need to understand their parts:
+            {% endif %}
+
+
+
+            {% if lesson.lesson_id == '3' %}
+                A <span class= "term"> term </span> is either a <strong>noun, adjective, or verb, </strong> and it refers to a category of things.
+                <br>
+            {% endif %}
+
+
+            
+            {% if lesson.lesson_id == '4' %}
+                A proposition involves connecting two terms, 
+                a <span class= "subject"> subject </span> and a <span class= "predicate"> predicate </span>,
+                <br> sometimes using a <span class= "copula"> copula </span>,  or a connector, such as “is,” “are,” “was,” or “were.”
+                <br><br>
+                Propositions take the form of a declarative sentence and are always <strong> true </strong> or <strong>  false </strong> 
+                <br><br>
+                “<span class= "subject">I</span> <span class= "copula">am</span> <span class= "predicate">hungry.</span>” is a proposition;
+                “Feed me!” is not.
+                <br><br>
+
+                <button id="showMoreButton">Click for more Examples</button>
+                <button id="moreExamples" style="display: none;">
+                    <span class= "subject">She</span> <span class= "copula">is</span> <span class= "predicate">jumping.</span>
+                    <br><br>
+                       <span class= "subject">Samantha</span> <span class= "copula">is</span> <span class= "predicate">an athletic cat.</span>
+                    <br><br>
+                    <span class= "subject">He</span> <span class= "copula">was</span> <span class= "predicate">sprinting quickly.</span>                
+                
+                </button>
+
+                <button id="equalsButton" style="display: none;"> </button>
+            {% endif %}
+
+
+            {% if lesson.image %}
+                <br>
+                <img src="{{ url_for('static', filename=lesson.image[0]) }}" alt="Lesson image" style="width: 900px; padding-bottom: 50px;">
+            {% endif %}
+
+            <!-- Learn 2 -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{lesson.text1}}  <br>
+                        {% for list in lesson.list1 %}
+                            {{list}} <br>
+                        {% endfor %}
+
+                        {% if lesson.images %}
+                            <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{lesson.text2}}  <br>
+                        {% for list in lesson.list2 %}
+                            {{list}} <br>
+                        {% endfor %}
+                        {% if lesson.images %}
+                            <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if lesson.text3 %}
+
+
+                {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+                
+                {% for word in lesson.text3.split() %}
+                    {% if word.lower()|contains_any(terms3) %}
+                        <strong><span class="word">{{word}}</span></strong>
+                    {% else %}
+                        <span>{{word}}</span>
+                    {% endif %}
+                {% endfor %}
+
+            {% endif %}
+        </div>
 
 
 </div>
