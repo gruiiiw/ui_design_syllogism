@@ -5,7 +5,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#nextBtn").click(function(){
-            window.location.href = "{{lesson.next_lesson}}";
+            window.location.href = "{{lesson.next_lesson}}";            
         });
         
         $("#backBtn").click(function(){
@@ -52,7 +52,6 @@
         let intervalId = setInterval(highlightNextWord, 2000);
         
 
-
         document.getElementById('equalsButton').addEventListener('click', function() {
             document.getElementById('conclusionButton').style.display = 'inline-block';
         });
@@ -60,7 +59,6 @@
         document.getElementById('equalsButton2').addEventListener('click', function() {
             document.getElementById('conclusionButton2').style.display = 'inline-block';
         });
-
 
 
     });
@@ -105,6 +103,9 @@
 
             {% if lesson.lesson_id == '1' %}
                 <br>
+
+                
+
                 <span class = "premise margin20">Premise</span> <span class = "tan-button"> + </span> 
                 <span class = "premise margin20">Premise</span>
                 <button id="equalsButton" style="display: inline-block; white-space: nowrap;"> = </button>
@@ -166,7 +167,40 @@
 
             {% if lesson.lesson_id == '3' %}
                 A <span class= "term"> term </span> is either a <strong>noun, adjective, or verb, </strong> and it refers to a category of things.
-                <br>
+                <br><br>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class = "term_container">
+                                noun <br><br>
+                                <span class= "predicate margin10"> man </span>
+                                <span class= "predicate margin10"> ox </span>
+                                <div class= "predicate margin10 center-content"> that funny comedian </div>
+                            </div>                            
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class = "term_container">
+                                adjective <br><br>
+                                <span class= "predicate margin10"> yellow </span>
+                                <span class= "predicate margin10"> big </span>
+                                <span class= "predicate margin10"> tall </span>
+                                <div class= "predicate margin10 center-content"> respectful </div>
+                            </div>                            
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class = "term_container">
+                                verb <br><br>
+                                <span class= "predicate margin10"> runs </span>
+                                <span class= "predicate margin10"> jump </span>
+                                <div class= "predicate margin10 center-content"> dances </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+
             {% endif %}
 
 

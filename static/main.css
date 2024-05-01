@@ -45,8 +45,14 @@
     font-weight: bold;
 }
 
+
 .margin20{
     margin: 20px;
+}
+
+
+.margin10{
+    margin: 10px;
 }
 
 .premise{    
@@ -148,6 +154,13 @@
 #moreExamples{
     border: none;
     background-color: #f4eadb; /*blue */
+
+}
+
+.term_container{
+    border: #000000 2px solid;
+    padding: 20px;
+
 
 }
 

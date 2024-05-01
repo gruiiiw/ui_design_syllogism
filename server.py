@@ -31,7 +31,7 @@ lessons = {
    "2.5":{
       "lesson_id": "2.5",
       "title": "What is a Syllogism",
-      "text": "Can you start to see these parts in the following examples?:",
+      "text": "Can you start to see these parts in the following examples?",
       "next_lesson":"/learn/3",
       "prev_lesson":"/learn/2",
    },
@@ -44,7 +44,6 @@ lessons = {
 
       "next_lesson":"/quiz/1",
       "prev_lesson":"/learn/2.5",
-      "image":["images/learn3.png"]
 
    },
 
