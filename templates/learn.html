@@ -114,6 +114,19 @@
             {% endif %}
 
 
+            {% if lesson.lesson_id == '2.5' %}
+                <br>
+                <div class = "right-align">
+                <span class = "premise">Premise 1: <span class= "subject"> All people</span> <span class= "copula"> are </span> <span class= "predicate"> Mortal </span></span>
+                <br><br>
+                <span class = "tan-button"> + </span>
+                <span class = "premise">Premise 2: <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> a person </span> </span>
+                <br><br>
+                <button id="equalsButton" style="display: inline-block; white-space: nowrap;"> = </button>
+
+                <button id="conclusionButton" style="display: none; white-space: nowrap;">Conclusion (C): <span class= "subject"> Aristotle </span> <span class= "copula"> is </span> <span class= "predicate"> Mortal </span></button>
+                </div>
+            {% endif %}
 
             {% if lesson.lesson_id == '3' %}
                 A <span class= "term"> term </span> is either a <strong>noun, adjective, or verb, </strong> and it refers to a category of things.

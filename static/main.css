@@ -8,7 +8,11 @@
 .center-content{
     justify-content: center;
     text-align: center;    
-    padding-top: 100px;
+}
+
+.right-align{
+    text-align: right;
+    margin-right: 200px;
 }
 
 .titlePadding {
@@ -22,7 +26,7 @@
 }
 
 .textSmall{
-    font-size: 26px;
+    font-size: 26px !important;
 }
 
 .textLargest{
@@ -48,9 +52,8 @@
     border-radius: 30px; 
     color: white;
     padding: 15px 32px;
-    margin: 50px;
+    margin: 40px;
     font-size: 36px;
-
 }
 
 .tan-button{
@@ -59,7 +62,7 @@
     border-radius: 40px; 
     color: white;
     padding: 15px 32px;
-    margin: 20px;
+    margin: 40px;
     font-size: 36px;
 
 }
@@ -89,7 +92,7 @@
 }
 
 .predicate{
-    background-color: #55896B; /* Green */
+    background-color: #A87456; /* brown */
     border: none;
     border-radius: 30px; 
     color: white;
@@ -119,6 +122,7 @@
     border-radius: 30px; 
     color: white;
     padding: 10px;
+    outline: none;
 }
 
 #showMoreButton:hover {
