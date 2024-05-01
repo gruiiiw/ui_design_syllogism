@@ -76,9 +76,8 @@
 
 
 @keyframes flash {
-    0% {opacity: 1;}
-    50% {opacity: 0.5;}
-    100% {opacity: 1;}
+    50% { background-color: #dcb06e; } 
+    100% { background-color: #DDBC8A; } 
 }
 
 
@@ -90,8 +89,9 @@
     padding: 15px 32px;
     font-size: 36px;
     outline: none;
-    animation: flash 3s infinite;
-
+    animation: flash 5s infinite;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
 #equalsButton2{
@@ -102,18 +102,19 @@
     padding: 15px 32px;
     font-size: 36px;
     outline: none;
-    animation: flash 3s infinite;
-
-}
+    animation: flash 5s infinite;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    }
 
 
 #equalsButton:hover {
-    background-color: #f2d3a5; 
+    background-color: #a06e23; 
     cursor: pointer;
 }
 
 #equalsButton2:hover {
-    background-color: #f2d3a5; 
+    background-color: #a06e23; 
     cursor: pointer;
 }
 
@@ -192,6 +193,8 @@
     cursor: pointer;
     font-family: 'Bodani FLF';
     outline: none;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .startBtn:hover {
@@ -201,12 +204,12 @@
 /* Forward/Back Button */
 
 #nextBtn{
-    background-color: #271905; /* Brown */
+    background-color: #55896B; /* green */
     outline: none;
 }
 
 #nextBtn:hover {
-    background-color: #543c2c; /* Lighter Brown */
+    background-color: #38694d; /* Lighter Brown */
 }
 
 #nextBtn, #backBtn {
@@ -224,6 +227,8 @@
     font-family: 'Manrope', sans-serif;
     padding: 0; /* remove padding if any */
     outline: none;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
 #backBtn{
