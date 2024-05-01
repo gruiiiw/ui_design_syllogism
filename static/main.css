@@ -21,6 +21,10 @@
     color: black;
 }
 
+.textSmall{
+    font-size: 26px;
+}
+
 .textLargest{
     font-size: 60px;
 }
@@ -94,7 +98,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0px;
+    padding: 50px;
     z-index: 4;
 }
 

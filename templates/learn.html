@@ -58,53 +58,92 @@
         {{lesson.title}}
     </div>
 
-    {% set terms = ['syllo', 'subject', 'predicate', 'copula', 'connector', 'terms', 'proposition', 'valid'] %}
-    {% for word in lesson.text.split() %}
-        {% if word.lower()|contains_any(terms) %}
-            <span class="word" title="{{definition}}">{{word}}</span>
-        {% else %}
-            <span>{{word}}</span>
-        {% endif %}
-    {% endfor %}
+        <div class= "textSmall">
+                
+            <!-- Learn 1 -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                {{lesson.text1}}  <br>
-                {% for list in lesson.list1 %}
-                    {{list}} <br>
+            {% set lines = lesson.text.split('\n') %}
+            {% for line in lines %}
+                {% set words = line.split() %}
+                {% for word in words %}
+                    {% if loop.index0 == 0 %}
+                        <strong>{{ word }}</strong>
+                    {% else %}
+                        {% if word.lower() == 'conclusion' %}
+                            <strong><span style="color: #3D82AB;">{{ word }}</span></strong>
+                        {% elif word.lower() == 'syllogisms' %}
+                            <strong>{{ word }}</strong>
+                        {% elif word.lower() == 'premises' %}
+                            <strong><span style="color: #55896B;">{{ word }}</span></strong>
+                        {% elif word.lower() == 'terms' %}
+                            <strong><span style="color: #A87456;">{{ word }}</span></strong>
+                        {% else %}
+                            {{ word }}
+                        {% endif %}
+                    {% endif %}
                 {% endfor %}
-
-                {% if lesson.images %}
-                    <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
-                {% endif %}
-            </div>
-
-            <div class="col-md-6">
-                {{lesson.text2}}  <br>
-                {% for list in lesson.list2 %}
-                    {{list}} <br>
-                {% endfor %}
-                {% if lesson.images %}
-                    <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    {% if lesson.text3 %}
+                <br>
+            {% endfor %}
 
 
-        {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
-        
-        {% for word in lesson.text3.split() %}
-            {% if word.lower()|contains_any(terms3) %}
-                <strong><span class="word">{{word}}</span></strong>
-            {% else %}
-                <span>{{word}}</span>
+
+            
+            
+
+            {% if lesson.image %}
+                <br>
+                <img src="{{ url_for('static', filename=lesson.image[0]) }}" alt="Lesson image" style="width: 800px; padding-bottom: 50px;">
             {% endif %}
-        {% endfor %}
 
-    {% endif %}
+            {% if lesson.text1_1 %}
+                {{ lesson.text1_1.replace('\n', '<br>')|safe }}
+            {% endif %}
+
+            {% if lesson.text2_1 %}
+
+            {% endif %}
+
+            <!-- Learn 2 -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{lesson.text1}}  <br>
+                        {% for list in lesson.list1 %}
+                            {{list}} <br>
+                        {% endfor %}
+
+                        {% if lesson.images %}
+                            <img src="{{ url_for('static', filename=lesson.images[0]) }}" alt="Lesson image" style="width: 400px;">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{lesson.text2}}  <br>
+                        {% for list in lesson.list2 %}
+                            {{list}} <br>
+                        {% endfor %}
+                        {% if lesson.images %}
+                            <img src="{{ url_for('static', filename=lesson.images[1]) }}" alt="Lesson image" style="width: 400px;">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if lesson.text3 %}
+
+
+                {% set terms3 = ['valid', 'sound'] %} <!-- Add terms here -->
+                
+                {% for word in lesson.text3.split() %}
+                    {% if word.lower()|contains_any(terms3) %}
+                        <strong><span class="word">{{word}}</span></strong>
+                    {% else %}
+                        <span>{{word}}</span>
+                    {% endif %}
+                {% endfor %}
+
+            {% endif %}
+        </div>
 
 
 </div>
