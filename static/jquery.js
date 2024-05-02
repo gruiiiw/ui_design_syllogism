@@ -110,8 +110,11 @@ $(document).ready(function () {
             } else if (quizId == 4) {
                 checkLogicalFallicies();
             } else if (quizId == 5) {
-                var cloneId = event.originalEvent.dataTransfer.getData('text');
-                $('#' + cloneId).remove(); // Remove the clone after dropping
+                checkQuiz5Correct();
+            }
+        } else {
+            if (quizId == 5) {
+                checkQuiz5Correct();
             }
         }
     });
@@ -184,6 +187,46 @@ function checkBuildCorrect() {
 
     let correctCount = propositions.filter(prop => correctPropositions.includes(prop)).length;
     let resultText = (correctCount === correctPropositions.length) ? "CORRECT" : "Incorrect or incomplete propositions";
+    $('#result').text(resultText).show();
+}
+
+function checkQuiz5Correct() {
+    const correctPropositions = {
+        v1: "Mikey is a snake",
+        v2: "All snakes are reptiles",
+        v3: "Mikey is a reptile",
+        f1: "Mikey is a reptile",
+        f2: "All snakes are reptiles",
+        f3: "Mikey is a snake",
+    };
+
+    console.log("Checking correctness for Quiz 5");
+
+    let correctCount = 0;
+
+    $('.category').each(function () {
+        const categoryId = this.id;
+        console.log(`Checking category ID: ${categoryId}`);
+
+        let proposition = $(this).children().map(function () {
+            return $(this).text().trim();
+        }).get().join(' ');
+
+        console.log(`Proposition found: ${proposition}`);
+        console.log(`Expected proposition: ${correctPropositions[categoryId]}`);
+
+        if (proposition === correctPropositions[categoryId]) {
+            console.log(`Proposition for ${categoryId} is correct`);
+            correctCount++;
+        } else {
+            console.log(`Proposition for ${categoryId} is incorrect`);
+        }
+    });
+
+    console.log(`Total correct propositions: ${correctCount}`);
+
+    let resultText = (correctCount === Object.keys(correctPropositions).length) ? "CORRECT" : "Incorrect or incomplete propositions";
+    console.log(`Result: ${resultText}`);
     $('#result').text(resultText).show();
 }
 
