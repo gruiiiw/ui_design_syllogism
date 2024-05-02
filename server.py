@@ -11,7 +11,7 @@ app = Flask(__name__)
 lessons = {
    "1":{
       "lesson_id": "1",
-      "title": "What is a Syllogism",
+      "title": "What is a Syllogism?",
       "text": "Syllogisms: a syllogism is a specific form of argument through which we infer a conclusion on the basis of two premises;",
       "text1_1": "\nSyllogisms are central to logic, which is the study of correct patterns of reasoning.",
       "next_lesson":"/learn/2",
@@ -20,13 +20,20 @@ lessons = {
 
    "2":{
       "lesson_id": "2",
-      "title": "What is a Syllogism",
-      "text": """Syllogisms:  a specific form of argument through which we infer a conclusion on the basis of two premises, each of which is a proposition.
+      "title": "What is a Syllogism?",
+      "text": """Syllogisms:  a specific form of argument through which we infer a conclusion on the basis of two premises, \n each of which is a proposition.
  \n Syllogisms are distinguished by the fact that the two premises have exactly one term in common.""",
-      "next_lesson":"/learn/3",
+      "next_lesson":"/learn/2.5",
       "prev_lesson":"/learn/1",
-      "image":["images/learn2.png"]
+   },
 
+   
+   "2.5":{
+      "lesson_id": "2.5",
+      "title": "What is a Syllogism?",
+      "text": "Can you start to see these parts in the following examples?",
+      "next_lesson":"/learn/3",
+      "prev_lesson":"/learn/2",
    },
    
    "3":{
@@ -36,8 +43,7 @@ lessons = {
       "text2_1":"""A term is either a noun, adjective, or verb, and it refers to a category of things. """,
 
       "next_lesson":"/quiz/1",
-      "prev_lesson":"/learn/2",
-      "image":["images/learn3.png"]
+      "prev_lesson":"/learn/2.5",
 
    },
 
@@ -50,7 +56,7 @@ lessons = {
 
    "5":{
       "lesson_id": "5",
-      "title": "BUILDING THE SYLLOGISM",
+      "title": "Building the Syllogism",
       "text": "Now that we know how propositions work, let’s put them together into syllogistic form:",
       
       "list1": ["(1) All dogs are animals", "(2) Aristotle is an animal", "(3) Therefore, Aristotle is a dog."],
@@ -67,7 +73,7 @@ lessons = {
    
    "6":{
       "lesson_id": "6",
-      "title": "LOGICAL FALLACIES",
+      "title": "Logical Fallacies",
       "text": "",
       "text1": "Make sure to not accidentally affirm the consequent:",
       "list1": ["(1) All dogs are animals", "(2) Aristotle is an animal", "(3) Therefore, Aristotle is a dog."],
