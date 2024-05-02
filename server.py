@@ -21,7 +21,7 @@ lessons = {
    "2":{
       "lesson_id": "2",
       "title": "What is a Syllogism?",
-      "text": """Syllogisms:  a specific form of argument through which we infer a conclusion on the basis of two premises, each of which is a proposition.
+      "text": """Syllogisms:  a specific form of argument through which we infer a conclusion on the basis of two premises, \n each of which is a proposition.
  \n Syllogisms are distinguished by the fact that the two premises have exactly one term in common.""",
       "next_lesson":"/learn/2.5",
       "prev_lesson":"/learn/1",

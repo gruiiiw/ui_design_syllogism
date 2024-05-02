@@ -25,7 +25,7 @@
 }
 
 .textSmall{
-    font-size: 26px !important;
+    font-size: 25px !important;
 }
 
 .textLargest{
@@ -33,7 +33,7 @@
 }
 
 .textLarge{
-    font-size: 50px;
+    font-size: 48px;
 }
 
 .navLine{
@@ -45,6 +45,35 @@
     font-weight: bold;
 }
 
+
+.definition {
+    position: relative;
+    cursor: help;
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  }
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 5;
+    bottom: 100%;
+    left: 10%; /* Change this line to position the tooltip to the right */
+    margin-left: 10px; /* Add this line to add some spacing between the word and the tooltip */
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  .definition:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
 
 .margin20{
     margin: 20px;
@@ -231,6 +260,8 @@
     outline: none;
     box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
                 inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: auto; /* Add this line */
+
 }
 
 #backBtn{
@@ -250,14 +281,18 @@
     justify-content: space-between;
     padding: 50px;
     z-index: 4;
+    pointer-events: none; /* Add this line */
 }
 
 .buttonContainer .backBtn {
     margin-right: auto;
+    pointer-events: auto; /* Add this line */
 }
 
 .buttonContainer .nextBtn {
     margin-left: auto;
+    pointer-events: auto; /* Add this line */
+
 }
 
 
@@ -276,7 +311,7 @@
 
 .category {
     width: 30%;
-    min-height: 150px;
+    min-height: 180px;
     max-height: fit-content;
     border: 2px solid #000000;
     margin: 10px;
@@ -284,6 +319,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* makes it so the items in the box don't come out */
 }
 
 .quiz-style-1 .item {
@@ -410,8 +446,8 @@
 
 .quiz-style-3 .category {
     width: 48%;
-    min-height: 100px;
-    margin: 0 1%;
+    min-height:90px;
+    margin: 0 0%;
     padding: 20px 20px 20px 120px;
     border: none;
     box-sizing: border-box;
@@ -426,13 +462,13 @@
     background-color: #588c6c;
     color: white;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -444,10 +480,11 @@
 }
 
 .quiz-style-3 .item {
+    margin-top: 5px;
     padding: 10px 15px;
     background-color: #b07454;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 20px;
     color: white;
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
