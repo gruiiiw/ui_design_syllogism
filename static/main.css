@@ -547,5 +547,49 @@
 .quiz-style-4 .bodaniText {
     margin-bottom: 20px;
 }
+.quiz-style-5-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quiz-style-5 .draggable-items {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+}
+
+.quiz-5-item {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background-color: #b07454;
+    color: white;
+    border: 1px solid #000;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 200px;
+}
+
+.quiz-style-5 .categories {
+    width: 48%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.quiz-5-category {
+    background-color: transparent;
+    border: 3px solid #000000;
+    min-width: 400px;
+    width: 400px;
+    min-height: 50px;
+    text-align: start;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
 
 
