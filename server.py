@@ -227,11 +227,15 @@ def quiz(quiz_id):
     else:
         return "Quiz not found", 404
 
+@app.route('/results')
+def results():
+    return render_template('results.html')
 
 # Other
 @app.template_filter('contains_any')
 def contains_any(word, terms):
     return any(term in word for term in terms)
+
 
 
 
