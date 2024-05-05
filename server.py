@@ -248,7 +248,7 @@ def quiz(quiz_id):
 def results():
     score = session.get('score', 0)
     session.pop('score', None)
-    return render_template('results.html', score=score)
+    return render_template('results.html', score=score, current_page='results')
 
 # Other
 @app.template_filter('contains_any')

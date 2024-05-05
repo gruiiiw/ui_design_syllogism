@@ -38,7 +38,13 @@
         alt="Image for {{ current_page }}"
         style="max-width: calc(100% - 500px); padding-left: 20px;"
       />
-      {% endif %}
+      {% endif %} {% if current_page.startswith('results') %}
+      <img
+        src="/static/images/progress_bar/progress_bar_results.png"
+        alt="Image for Results"
+        style="max-width: calc(100% - 500px); padding-left: 20px;"
+      />
+      {% endif %} 
 
       <button
         class="navbar-toggler"

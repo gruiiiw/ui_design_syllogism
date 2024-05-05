@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,12 @@
 
         .container {
             text-align: center; /* Center align content */
-            padding-top: 100px; /* Add padding to move content down */
         }
 
         .score {
             font-size: 24px; /* Smaller font size */
             color: black; /* Black font color */
+            padding-top: 100px;
         }
 
         .score-value {
@@ -57,3 +58,6 @@
     </div>
 </body>
 </html>
+
+
+{% endblock %}
