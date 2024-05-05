@@ -59,7 +59,7 @@ lessons = {
       "title": "Building the Syllogism",
       "text": "Now that we know how propositions work, let’s put them together into syllogistic form:",
       
-      "list1": ["(P1) All people mortal", "(P2) Aristotle is a person", "(C) Aristotle is mortal"],
+      "list1": ["(P1) All people are mortal", "(P2) Aristotle is a person", "(C) Aristotle is mortal"],
       "list2": ["(P1) All plants speak", "(P2) That horse over there is a plant", "(C) That horse over there speaks"],
 
 

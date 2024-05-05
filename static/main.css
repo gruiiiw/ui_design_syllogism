@@ -321,6 +321,9 @@
     font-family: 'Bodani FLF';
     font-size: 24px;
 }
+.quiz-5-category{
+    display: flex;
+}
 
 .quiz-style-1 .item {
     width: auto;
