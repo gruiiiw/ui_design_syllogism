@@ -173,30 +173,77 @@ quizzes = {
             {"id": "b2", "name": "(1) All dogs are animals \n(2) Aristotle is an animal \n(3) Therefore, Aristotle is a dog.", "category": "b_2"},
         ]
    },
-   "5":{
-      "quiz_id": "5",
-      "title": "Putting it all together",
-      "text": "",
-      "next":"/",
-      "prev":"/quiz/4",
-      "categories": [
-            {"id": "v1", "name": "(1)"},
-            {"id": "v2", "name": "(2)"},
-            {"id": "v3", "name": "(3) Therefore, "},
-            {"id": "f1", "name": "(1)"},
-            {"id": "f2", "name": "(2)"},
-            {"id": "f3", "name": "(3) Therefore, "},
-        ],
-        "items": [
-            {"id": "prompt1", "name": "reptiles", "category": "pt1"},
-            {"id": "prompt2", "name": "a snake", "category": "pt2"},
-            {"id": "prompt3", "name": "Mikey", "category": "pt3"},
-            {"id": "prompt4", "name": "a reptile", "category": "pt4"},
-            {"id": "prompt5", "name": "All snakes", "category": "pt5"},
-            {"id": "prompt6", "name": "are", "category": "pt6"},
-            {"id": "prompt7", "name": "is", "category": "pt7"},
-        ]
-   }
+    "5":{
+    "quiz_id": "5",
+    "title": "Putting it all together",
+    "text": "",
+    "next":"/",
+    "prev":"/quiz/4",
+    "categories": [
+        {"id": "box1", "name": "valid p1 subject"},
+        {"id": "box2", "name": "valid p1 copula"},
+        {"id": "box3", "name": "valid p1 predicate"},
+        {"id": "box4", "name": "valid p2 subject"},
+        {"id": "box5", "name": "valid p2 copula"},
+        {"id": "box6", "name": "valid p2 predicate"},
+        {"id": "box7", "name": "valid p3 subject"},
+        {"id": "box8", "name": "valid p3 copula"},
+        {"id": "box9", "name": "valid p3 predicate"},
+        {"id": "box10", "name": "fallacious p1 subject"},
+        {"id": "box11", "name": "fallacious p1 copula"},
+        {"id": "box12", "name": "fallacious p1 predicate"},
+        {"id": "box13", "name": "fallacious p2 subject"},
+        {"id": "box14", "name": "fallacious p2 copula"},
+        {"id": "box15", "name": "fallacious p2 predicate"},
+        {"id": "box16", "name": "fallacious p3 subject"},
+        {"id": "box17", "name": "fallacious p3 copula"},
+        {"id": "box18", "name": "fallacious p3 predicate"},
+    ],
+    "items": [
+        {"id": "prompt1", "name": "Mikey", "category": "pt1"},
+        {"id": "prompt2", "name": "is", "category": "pt2"},
+        {"id": "prompt3", "name": "a snake", "category": "pt3"},
+        {"id": "prompt4", "name": "All snakes", "category": "pt4"},
+        {"id": "prompt5", "name": "are", "category": "pt5"},
+        {"id": "prompt6", "name": "reptiles", "category": "pt6"},
+        {"id": "prompt7", "name": "Mikey", "category": "pt7"},
+        {"id": "prompt8", "name": "is", "category": "pt1"},
+        {"id": "prompt9", "name": "a reptile", "category": "pt2"},
+        {"id": "prompt10", "name": "Mikey", "category": "pt3"},
+        {"id": "prompt11", "name": "is", "category": "pt4"},
+        {"id": "prompt12", "name": "a reptile", "category": "pt5"},
+        {"id": "prompt13", "name": "All snakes", "category": "pt6"},
+        {"id": "prompt14", "name": "are", "category": "pt7"},
+        {"id": "prompt15", "name": "reptiles", "category": "pt4"},
+        {"id": "prompt16", "name": "mikey", "category": "pt5"},
+        {"id": "prompt17", "name": "is", "category": "pt6"},
+        {"id": "prompt18", "name": "a reptile", "category": "pt7"},
+    ]
+}
+#    "5":{
+#       "quiz_id": "5",
+#       "title": "Putting it all together",
+#       "text": "",
+#       "next":"/",
+#       "prev":"/quiz/4",
+#       "categories": [
+#             {"id": "v1", "name": "(1)"},
+#             {"id": "v2", "name": "(2)"},
+#             {"id": "v3", "name": "(3) Therefore, "},
+#             {"id": "f1", "name": "(1)"},
+#             {"id": "f2", "name": "(2)"},
+#             {"id": "f3", "name": "(3) Therefore, "},
+#         ],
+#         "items": [
+#             {"id": "prompt1", "name": "reptiles", "category": "pt1"},
+#             {"id": "prompt2", "name": "a snake", "category": "pt2"},
+#             {"id": "prompt3", "name": "Mikey", "category": "pt3"},
+#             {"id": "prompt4", "name": "a reptile", "category": "pt4"},
+#             {"id": "prompt5", "name": "All snakes", "category": "pt5"},
+#             {"id": "prompt6", "name": "are", "category": "pt6"},
+#             {"id": "prompt7", "name": "is", "category": "pt7"},
+#         ]
+#    }
 
 }
 

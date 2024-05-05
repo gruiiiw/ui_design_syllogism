@@ -1,551 +1,556 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
 /* Homepage css */
 .beigeBackground {
-    background-color: #f4eadb;
-    font-size: 20px;
+  background-color: #f4eadb;
+  font-size: 20px;
 }
 
-.center-content{
-    justify-content: center;
-    text-align: center;    
+.center-content {
+  justify-content: center;
+  text-align: center;
 }
 
-.right-align{
-    text-align: right;
+.right-align {
+  text-align: right;
 }
 
 .titlePadding {
-    padding-top: 20px;
-    padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
-.bodaniText{
-    font-family: 'Bodani FLF';
-    color: black;
+.bodaniText {
+  font-family: "Bodani FLF";
+  color: black;
 }
 
-.textSmall{
-    font-size: 25px !important;
+.textSmall {
+  font-size: 25px !important;
 }
 
-.textLargest{
-    font-size: 60px;
+.textLargest {
+  font-size: 60px;
 }
 
-.textLarge{
-    font-size: 48px;
+.textLarge {
+  font-size: 48px;
 }
 
-.navLine{
-    border-top: 3px solid #967d55;
+.navLine {
+  border-top: 3px solid #967d55;
 }
 /* Learning Graphics*/
-.term{
-    color: #A87456;
-    font-weight: bold;
+.term {
+  color: #a87456;
+  font-weight: bold;
 }
-
 
 .definition {
-    position: relative;
-    cursor: help;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-    inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-  }
+  position: relative;
+  cursor: help;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 .tooltip {
-    visibility: hidden;
-    width: 200px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
 
-    position: absolute;
-    z-index: 5;
-    bottom: 100%;
-    left: 10%; /* Change this line to position the tooltip to the right */
-    margin-left: 10px; /* Add this line to add some spacing between the word and the tooltip */
+  position: absolute;
+  z-index: 5;
+  bottom: 100%;
+  left: 10%; /* Change this line to position the tooltip to the right */
+  margin-left: 10px; /* Add this line to add some spacing between the word and the tooltip */
 
-    opacity: 0;
-    transition: opacity 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-  .definition:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-
-.margin20{
-    margin: 20px;
+.definition:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
-
-.margin10{
-    margin: 10px;
+.margin20 {
+  margin: 20px;
 }
 
-.premise{    
-    background-color: #55896B; /* Green */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 15px 32px;
-    font-size: 36px;
-    max-width: 200px; /* Add this line */
+.margin10 {
+  margin: 10px;
 }
 
-.tan-button{
-    background-color: #DDBC8A; 
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 25px;
-    font-size: 36px;
+.premise {
+  background-color: #55896b; /* Green */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 36px;
+  max-width: 200px; /* Add this line */
 }
 
+.tan-button {
+  background-color: #ddbc8a;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 25px;
+  font-size: 36px;
+}
 
 @keyframes flash {
-    50% { background-color: #dcb06e; } 
-    100% { background-color: #DDBC8A; } 
+  50% {
+    background-color: #dcb06e;
+  }
+  100% {
+    background-color: #ddbc8a;
+  }
 }
 
-
-#equalsButton{
-    background-color: #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 30px;
-    font-size: 36px;
-    outline: none;
-    animation: flash 5s infinite;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+#equalsButton {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 30px;
+  font-size: 36px;
+  outline: none;
+  animation: flash 5s infinite;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-#equalsButton2{
-    background-color: #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 30px;
-    font-size: 36px;
-    outline: none;
-    animation: flash 5s infinite;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-    }
-
+#equalsButton2 {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 30px;
+  font-size: 36px;
+  outline: none;
+  animation: flash 5s infinite;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 #equalsButton:hover {
-    background-color: #a06e23; 
-    cursor: pointer;
+  background-color: #a06e23;
+  cursor: pointer;
 }
 
 #equalsButton2:hover {
-    background-color: #a06e23; 
-    cursor: pointer;
+  background-color: #a06e23;
+  cursor: pointer;
 }
 
-.subject{
-    background-color: #3D82AB; /* blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
+.subject {
+  background-color: #3d82ab; /* blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
 }
 
-.predicate{
-    background-color: #A87456; /* brown */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
+.predicate {
+  background-color: #a87456; /* brown */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
 }
-.copula{
-    background-color:  #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
-}
-
-#conclusionButton, #conclusionButton2{
-    margin-left: 40px;
-    background-color: #3D82AB; /*blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 15px 32px;
-    font-size: 36px;
+.copula {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
 }
 
-#showMoreButton{
-    background-color: #3D82AB; /*blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
-    outline: none;
+#conclusionButton,
+#conclusionButton2 {
+  margin-left: 40px;
+  background-color: #3d82ab; /*blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 36px;
+}
+
+#showMoreButton {
+  background-color: #3d82ab; /*blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  outline: none;
 }
 
 #showMoreButton:hover {
-    background-color: #2c6b90; /*blue dark*/
+  background-color: #2c6b90; /*blue dark*/
 }
 
-#moreExamples{
-    border: none;
-    background-color: #f4eadb; /*blue */
-
+#moreExamples {
+  border: none;
+  background-color: #f4eadb; /*blue */
 }
 
-.term_container{
-    border: #000000 2px solid;
-    padding: 20px;
-
-
+.term_container {
+  border: #000000 2px solid;
+  padding: 20px;
 }
-
-
-
 
 /* Start Button */
 
 .startBtn {
-    background-color: #55896B; /* green */
-    border: none;
-    border-radius: 12px; 
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 32px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-family: 'Bodani FLF';
-    outline: none;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #55896b; /* green */
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Bodani FLF";
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .startBtn:hover {
-    background-color: #38694d; /* darker green */
+  background-color: #38694d; /* darker green */
 }
 
 /* Forward/Back Button */
 
-#nextBtn{
-    background-color: #55896B; /* green */
-    outline: none;
+#nextBtn {
+  background-color: #55896b; /* green */
+  outline: none;
 }
 
 #nextBtn:hover {
-    background-color: #38694d; /* Lighter Brown */
+  background-color: #38694d; /* Lighter Brown */
 }
 
-#nextBtn, #backBtn {
-    border: none;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    font-size: 50px;
-    line-height: 50px;
-    text-align:center;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
-    padding: 0; /* remove padding if any */
-    outline: none;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-    pointer-events: auto; /* Add this line */
-
+#nextBtn,
+#backBtn {
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  padding: 0; /* remove padding if any */
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: auto; /* Add this line */
 }
 
-#backBtn{
-    background-color: gray; /* Light */
+#backBtn {
+  background-color: gray; /* Light */
 }
 
 #backBtn:hover {
-    background-color: #666666; /* Dark Gray */
+  background-color: #666666; /* Dark Gray */
 }
 
 .buttonContainer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    z-index: 4;
-    pointer-events: none; /* Add this line */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  z-index: 4;
+  pointer-events: none; /* Add this line */
 }
 
 .buttonContainer .backBtn {
-    margin-right: auto;
-    pointer-events: auto; /* Add this line */
+  margin-right: auto;
+  pointer-events: auto; /* Add this line */
 }
 
 .buttonContainer .nextBtn {
-    margin-left: auto;
-    pointer-events: auto; /* Add this line */
-
+  margin-left: auto;
+  pointer-events: auto; /* Add this line */
 }
 
-
 /* Quiz css */
-.categories, .draggable-items {
-    display: flex;
-    cursor: pointer;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    z-index: 5;
+.categories,
+.draggable-items {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 5;
 }
 
 .category:hover {
-    background-color:#f7f1e9; /* Change background color when hover */
+  background-color: #f7f1e9; /* Change background color when hover */
 }
 
 .category {
-    width: 30%;
-    min-height: 180px;
-    max-height: fit-content;
-    border: 2px solid #000000;
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; /* makes it so the items in the box don't come out */
+  width: 30%;
+  min-height: 180px;
+  max-height: fit-content;
+  border: 2px solid #000000;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* makes it so the items in the box don't come out */
 }
 
 .quiz-style-1 .item {
-    width: auto;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
+  width: auto;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
 }
 
 .quiz-style-1 .item:hover {
-    background-color: #a66745; /* Change background color when hover */
+  background-color: #a66745; /* Change background color when hover */
 }
 
 .quiz-style-2 .item {
-    width: auto;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
+  width: auto;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
 }
 
 .quiz-style-2 .item:hover {
-    background-color: #a66745; /* Change background color when hover */
+  background-color: #a66745; /* Change background color when hover */
 }
 
 #result {
-    clear: both;
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    display: none;
+  clear: both;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
 }
 
 .buttonContainer {
-    clear: both;
-    padding-top: 20px;
+  clear: both;
+  padding-top: 20px;
 }
 
 .highlight-blue {
-    background-color: #2596BE;
-    color: white;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #2596be;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
 .highlight-green {
-    background-color: #588c6c;
-    color: white;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #588c6c;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
 .highlight-yellow {
-    background-color: #e0bc8c;
-    color: black;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #e0bc8c;
+  color: black;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
-.draggable{
-    margin: 8px 12px;
-    padding: 8px 12px;
+.draggable {
+  margin: 8px 12px;
+  padding: 8px 12px;
 }
 
 .drop-zone {
-    width: 100%;
-    height: 50px;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 50px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .draggable:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
-#aristotle, #a-man, #the-professor, #lectures, #i, #hungry {
-    width: auto;
-    margin: 8px 12px;
-    padding: 8px 12px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
+#aristotle,
+#a-man,
+#the-professor,
+#lectures,
+#i,
+#hungry {
+  width: auto;
+  margin: 8px 12px;
+  padding: 8px 12px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
 }
 
-#is, #am {
-    width: auto;
-    margin: 8px 12px;
-    padding: 8px 12px;
-    background-color: #ddbc8a;
-    color: white;
-    text-align: center;
-    border-radius: 1000px;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
+#is,
+#am {
+  width: auto;
+  margin: 8px 12px;
+  padding: 8px 12px;
+  background-color: #ddbc8a;
+  color: white;
+  text-align: center;
+  border-radius: 1000px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
 }
 
 #result {
-    visibility: visible !important;
+  visibility: visible !important;
 }
 
 .quiz-style-3 .category {
-    width: 48%;
-    min-height:90px;
-    margin: 0 0%;
-    padding: 20px 20px 20px 120px;
-    border: none;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
-    background-color: #beafa0;
-    position: relative;
+  width: 48%;
+  min-height: 90px;
+  margin: 0 0%;
+  padding: 20px 20px 20px 120px;
+  border: none;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #beafa0;
+  position: relative;
 }
 
 .quiz-style-3 .category::before {
-    content: attr(data-name);
-    background-color: #588c6c;
-    color: white;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  content: attr(data-name);
+  background-color: #588c6c;
+  color: white;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quiz-style-3 .category[data-name="C"]::before {
-    background-color: #4084ac;
+  background-color: #4084ac;
 }
 
 .quiz-style-3 .item {
-    margin-top: 5px;
-    padding: 10px 15px;
-    background-color: #b07454;
-    border-radius: 25px;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
-    cursor: pointer;
+  margin-top: 5px;
+  padding: 10px 15px;
+  background-color: #b07454;
+  border-radius: 25px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
 }
 
 .quiz-style-3 .item:hover {
-    background-color: #a06443;
+  background-color: #a06443;
 }
 
-
 #quizContainer.quiz-style-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .quiz-style-4 .quiz-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .quiz-style-4 .draggable-items {
-    width: 48%;
-    padding-right: 2%;
-    order: 1;
+  width: 48%;
+  padding-right: 2%;
+  order: 1;
 }
 
 .quiz-style-4 .categories {
-    
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    order: 2;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  order: 2;
 }
 
-.quiz-style-4 .item, .quiz-style-4 .category {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: transparent;
+.quiz-style-4 .item,
+.quiz-style-4 .category {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
 }
 
 .quiz-style-4 .category {
-    background-color: transparent;
-    border: 3px solid #000000;
-    min-width: 500px;
-    width: 500px;
-    min-height: 120px;
-    text-align: start;
-    align-items: flex-start;
-    overflow: hidden;
-    box-sizing: border-box;
+  background-color: transparent;
+  border: 3px solid #000000;
+  min-width: 500px;
+  width: 500px;
+  min-height: 120px;
+  text-align: start;
+  align-items: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-
 
 .quiz-style-4 .bodaniText {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
+.quiz-style-5 .categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+}
 
+.quiz-style-5 .quiz-5-category {
+  height: 50px; /* adjust this value as needed */
+}

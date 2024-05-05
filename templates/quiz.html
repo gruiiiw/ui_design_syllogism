@@ -33,17 +33,16 @@
   <div class="bodaniText">
     <div class="textLarge titlePadding">{{ quiz.title }}</div>
     <div class="textSmall">
-    <p>{{ quiz.text }}</p>
-  </div>
+      <p>{{ quiz.text }}</p>
+    </div>
     {% if quiz.image %}
     <img src="{{ quiz.image }}" alt="Lesson image" />
     {% endif %}
   </div>
   <div class="quiz-content">
     <div class="categories">
-      {% for category in quiz['categories'] %}
-      {% if quiz.quiz_id == '4'%} {{ category['name']
-        }} {% endif %}
+      {% for category in quiz['categories'] %} {% if quiz.quiz_id == '4'%} {{
+      category['name'] }} {% endif %}
       <div
         draggable="true"
         id="{{ category['id'] }}"
@@ -52,8 +51,8 @@
         ondragover="allowDrop(event)"
         ondrop="drop(event, this)"
       >
-        {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' and quiz.quiz_id != '4'%} {{ category['name']
-        }} {% endif %}
+        {% if quiz.quiz_id != '2' and quiz.quiz_id != '3' and quiz.quiz_id !=
+        '4'%} {{ category['name'] }} {% endif %}
       </div>
       {% endfor %}
     </div>
@@ -67,7 +66,7 @@
         ondragstart="drag(event)"
         data-category="{{ item.category }}"
       >
-      <!-- {{ item['name'] | replace('\n', '<br>') }}  Replace \n with <br> tags for HTML -->
+        <!-- {{ item['name'] | replace('\n', '<br>') }}  Replace \n with <br> tags for HTML -->
         {{ item['name'] }}
       </div>
       {% endfor %}
