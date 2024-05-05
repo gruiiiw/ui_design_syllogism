@@ -1,11 +1,11 @@
 from flask import Flask
 from flask import render_template
 from markupsafe import Markup
-from flask import Response, request, jsonify
+from flask import Response, request, jsonify, session
 
 
 app = Flask(__name__)
-
+app.secret_key = 'perrytheplatypus'
 
 
 lessons = {
@@ -177,7 +177,7 @@ quizzes = {
       "quiz_id": "5",
       "title": "Putting it all together",
       "text": "",
-      "next":"/",
+      "next":"/results",
       "prev":"/quiz/4",
       "categories": [
             {"id": "v1", "name": "(1)"},
@@ -214,6 +214,7 @@ def learn(lesson_id):
 # Quiz Pages - We need to have something to store the score
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
+    session.setdefault('score', 0)
     quiz = quizzes.get(quiz_id)
     if quiz:
         # Make sure quiz['items'] is present and is a list
@@ -229,15 +230,20 @@ def quiz(quiz_id):
 
 @app.route('/results')
 def results():
-    return render_template('results.html')
+    score = session.get('score', 0)
+    session.pop('score', None)
+    return render_template('results.html', score=score)
 
 # Other
 @app.template_filter('contains_any')
 def contains_any(word, terms):
     return any(term in word for term in terms)
 
-
-
+@app.route('/update-score', methods=['POST'])
+def update_score():
+    increment = int(request.form.get('increment', 0))
+    session['score'] = session.get('score', 0) + increment
+    return jsonify({'score': session['score']})
 
 
 
