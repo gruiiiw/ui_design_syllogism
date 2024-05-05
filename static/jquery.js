@@ -1,5 +1,10 @@
 $(document).ready(function () {
     let cloneCounter = 0;
+    let done1 = false;
+    let done2 = false;
+    let done3 = false;
+    let done4 = false;
+    let done5 = false;
     console.log("Document ready");
     var quizId = $('#quizContainer').data('quiz-id');
     console.log("Quiz ID:", quizId); // Debug the quizId
@@ -142,11 +147,15 @@ function checkLogicalFallicies(){
         }
     });
 
-    let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
-    if(mappingCorrect) {
-        updateScore(1);
+    let resultText = mappingCorrect ? "Correct! <img src='https://cdn-icons-png.flaticon.com/512/5289/5289675.png' alt='Checkmark' style='vertical-align: middle; width: 8%; height: auto;'/>" : "Incorrect! <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Incorrect_Symbol-512.png' alt='Incorrect' style='vertical-align: middle; width: 6%; height: auto;'/>";
+    if(done4 === false){
+        done4 = true;
+        if(mappingCorrect) {
+            updateScore(1);
+        }
+    
     }
-    $('#result').text(resultText).show();
+    $('#result').html(resultText).show();
 }
 
 function updateScore(increment) {
@@ -180,11 +189,15 @@ function checkSyllogismMapping() {
         }
     });
 
-    let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
-    if(mappingCorrect) {
-        updateScore(1);
+    let resultText = mappingCorrect ? "Correct! <img src='https://cdn-icons-png.flaticon.com/512/5289/5289675.png' alt='Checkmark' style='vertical-align: middle; width: 8%; height: auto;'/>" : "Incorrect! <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Incorrect_Symbol-512.png' alt='Incorrect' style='vertical-align: middle; width: 6%; height: auto;'/>";
+    if(done3 === false){
+        done3 = true;
+        if(mappingCorrect) {
+            updateScore(1);
+        }
+    
     }
-    $('#result').text(resultText).show();
+    $('#result').html(resultText).show();
 }
 
 function checkCorrectness() {
@@ -192,15 +205,22 @@ function checkCorrectness() {
     var horses = document.getElementById('horses');
     var speakingThings = document.getElementById('speaking-things');
     
-    var resultText = "Incorrect";
+    var resultText = "Incorrect! <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Incorrect_Symbol-512.png' alt='Incorrect' style='vertical-align: middle; width: 6%; height: auto;'/>";
     if (usStates.querySelectorAll("#oregon, #rocky-mountain, #utah").length === 3 &&
         horses.querySelectorAll("#horse-over-there, #secretariat").length === 2 &&
         speakingThings.querySelectorAll("#speaks, #speak").length === 2) {
-        resultText = "Correct!";
-        updateScore(1);
+        resultText = "Correct! <img src='https://cdn-icons-png.flaticon.com/512/5289/5289675.png' alt='Checkmark' style='vertical-align: middle; width: 8%; height: auto;'/>";
+    }
+    if(done1 === false){
+        done1 = true;
+        if (usStates.querySelectorAll("#oregon, #rocky-mountain, #utah").length === 3 &&
+            horses.querySelectorAll("#horse-over-there, #secretariat").length === 2 &&
+            speakingThings.querySelectorAll("#speaks, #speak").length === 2) {
+                updateScore(1);
+        }
     }
 
-    $('#result').text(resultText).show(); // Show the result text
+    $('#result').html(resultText).show(); // Show the result text
 }
 
 function checkBuildCorrect() {
@@ -212,12 +232,21 @@ function checkBuildCorrect() {
     }).get();
 
     let correctCount = propositions.filter(prop => correctPropositions.includes(prop)).length;
-    let resultText = (correctCount === correctPropositions.length) ? "CORRECT" : "Incorrect or incomplete propositions";
-    $('#result').text(resultText).show();
-    if (correctCount === correctPropositions.length) {
-        updateScore(1);
+    // Use .html() instead of .text() to insert the image tag along with the text
+    
+    let resultText = (correctCount === correctPropositions.length)
+        ? "Correct! <img src='https://cdn-icons-png.flaticon.com/512/5289/5289675.png' alt='Checkmark' style='vertical-align: middle; width: 8%; height: auto;'/>"
+        : "Incorrect! <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Incorrect_Symbol-512.png' alt='Incorrect' style='vertical-align: middle; width: 6%; height: auto;'/>";
+    $('#result').html(resultText).show(); // Use html() to parse the image tag correctly
+    if(done2 === false){
+        done2 = true;
+        if (correctCount === correctPropositions.length) {
+            updateScore(1);
+    }
+    
     }
 }
+
 
 function checkQuiz5Correct() {
     const correctPropositions = {
@@ -254,12 +283,15 @@ function checkQuiz5Correct() {
 
     console.log(`Total correct propositions: ${correctCount}`);
     if(cloneCounter >= 18){
-    let resultText = (correctCount === Object.keys(correctPropositions).length) ? "CORRECT" : "Incorrect or incomplete propositions";
-    if (correctCount === Object.keys(correctPropositions).length) {
-        updateScore(1);
+    let resultText = (correctCount === Object.keys(correctPropositions).length) ? "Correct! <img src='https://cdn-icons-png.flaticon.com/512/5289/5289675.png' alt='Checkmark' style='vertical-align: middle; width: 8%; height: auto;'/>" : "Incorrect! <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Incorrect_Symbol-512.png' alt='Incorrect' style='vertical-align: middle; width: 6%; height: auto;'/>";
+    if(done5 === false){
+        done5 = true;
+        if (correctCount === Object.keys(correctPropositions).length) {
+            updateScore(1);
+        }
     }
     console.log(`Result: ${resultText}`);
-    $('#result').text(resultText).show();
+    $('#result').html(resultText).show();
     }
 }
 });
