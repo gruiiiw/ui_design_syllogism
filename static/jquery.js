@@ -21,6 +21,13 @@ $(document).ready(function () {
         }
     });
 
+    
+    //Restart event listener (enter = start button click)
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            document.querySelector('.restart-btn').click();
+        }
+    });
 
     function handleDragStart(event) {
         var isInDropZone = $(this).closest('.category').length > 0; // Check if the item is in a drop zone
