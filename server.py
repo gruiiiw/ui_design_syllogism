@@ -188,13 +188,13 @@ quizzes = {
             {"id": "f3", "name": "(3) Therefore, "},
         ],
         "items": [
+            {"id": "prompt6", "name": "are", "category": "pt6"},
+            {"id": "prompt7", "name": "is", "category": "pt7"},
             {"id": "prompt1", "name": "reptiles", "category": "pt1"},
             {"id": "prompt2", "name": "a snake", "category": "pt2"},
             {"id": "prompt3", "name": "Mikey", "category": "pt3"},
             {"id": "prompt4", "name": "a reptile", "category": "pt4"},
             {"id": "prompt5", "name": "All snakes", "category": "pt5"},
-            {"id": "prompt6", "name": "are", "category": "pt6"},
-            {"id": "prompt7", "name": "is", "category": "pt7"},
         ]
    }
 
