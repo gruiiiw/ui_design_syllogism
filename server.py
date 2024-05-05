@@ -217,7 +217,7 @@ quizzes = {
         {"id": "prompt15", "name": "reptiles", "category": "pt4"},
         {"id": "prompt16", "name": "mikey", "category": "pt5"},
         {"id": "prompt17", "name": "is", "category": "pt6"},
-        {"id": "prompt18", "name": "a reptile", "category": "pt7"},
+        {"id": "prompt18", "name": "a snake", "category": "pt7"},
     ]
 }
 #    "5":{

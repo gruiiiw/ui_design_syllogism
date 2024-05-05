@@ -183,12 +183,24 @@ function checkSyllogismMapping() {
 function checkFinalQuiz() {
   let mappingCorrect = true; // Assume mapping is correct initially
   let mappings = {
-    p1_1: "z11",
-    p1_2: "z12",
-    p2_1: "z21",
-    p2_2: "z22",
-    c_1: "z31",
-    c_2: "z32",
+    box1: "prompt1",
+    box2: "prompt2",
+    box3: "prompt3",
+    box4: "prompt4",
+    box5: "prompt5",
+    box6: "prompt6",
+    box7: "prompt7",
+    box8: "prompt8",
+    box9: "prompt9",
+    box10: "prompt10",
+    box11: "prompt11",
+    box12: "prompt12",
+    box13: "prompt13",
+    box14: "prompt14",
+    box15: "prompt15",
+    box16: "prompt16",
+    box17: "prompt17",
+    box18: "prompt18",
   };
 
   $(".category").each(function () {
