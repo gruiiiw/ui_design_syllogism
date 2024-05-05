@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let cloneCounter = 0;
     console.log("Document ready");
     var quizId = $('#quizContainer').data('quiz-id');
     console.log("Quiz ID:", quizId); // Debug the quizId
@@ -20,16 +21,21 @@ $(document).ready(function () {
         var isInDropZone = $(this).closest('.category').length > 0; // Check if the item is in a drop zone
         
         if (quizId == 5 && !isInDropZone) {
+            
             var clone = this.cloneNode(true); // copy of node on which its called 
             var newId = 'clone_' + new Date().getTime();
             clone.id = newId;
             clone.setAttribute('draggable', 'true');
             document.body.appendChild(clone); // Append clone to the body
+            cloneCounter++;
+            console.log("Clone counter: ", cloneCounter);  // Optional: for debugging
             event.originalEvent.dataTransfer.setDragImage(clone, 0, 0); // Use the clone as the drag image
             event.originalEvent.dataTransfer.setData('text', newId);
             $(clone).data('dropped', false); // Mark the clone as not dropped
             
             var test = event.originalEvent.dataTransfer.getData('text');
+            
+            console.log("Clone counter: ", cloneCounter);  // Optional: for debugging
             console.log(test);
         } 
        
@@ -118,7 +124,7 @@ $(document).ready(function () {
             }
         }
     });
-});
+
 
 function checkLogicalFallicies(){
     let mappingCorrect = true; // Assume mapping is correct initially
@@ -247,12 +253,13 @@ function checkQuiz5Correct() {
     });
 
     console.log(`Total correct propositions: ${correctCount}`);
-
+    if(cloneCounter >= 18){
     let resultText = (correctCount === Object.keys(correctPropositions).length) ? "CORRECT" : "Incorrect or incomplete propositions";
     if (correctCount === Object.keys(correctPropositions).length) {
         updateScore(1);
     }
     console.log(`Result: ${resultText}`);
     $('#result').text(resultText).show();
+    }
 }
-
+});
