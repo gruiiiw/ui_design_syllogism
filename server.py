@@ -59,8 +59,8 @@ lessons = {
       "title": "Building the Syllogism",
       "text": "Now that we know how propositions work, let’s put them together into syllogistic form:",
       
-      "list1": ["(1) All dogs are animals", "(2) Aristotle is an animal", "(3) Therefore, Aristotle is a dog."],
-      "list2": ["(1) All universities have students", "(2) No high schools are universities", "(3) Therefore, no high schools have students"],
+      "list1": ["(P1) All people mortal", "(P2) Aristotle is a person", "(C) Aristotle is mortal"],
+      "list2": ["(P1) All plants speak", "(P2) That horse over there is a plant", "(C) That horse over there speaks"],
 
 
       "text3": "Notice how both of these are valid but only the first is sound",
