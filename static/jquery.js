@@ -137,8 +137,24 @@ function checkLogicalFallicies(){
     });
 
     let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
+    if(mappingCorrect) {
+        updateScore(1);
+    }
     $('#result').text(resultText).show();
 }
+
+function updateScore(increment) {
+    $.ajax({
+        url: '/update-score',
+        method: 'POST',
+        data: {increment: increment},
+        success: function(response) {
+            console.log("Score updated: ", response.score);
+        }
+    });
+}
+
+
 function checkSyllogismMapping() {
     let mappingCorrect = true; // Assume mapping is correct initially
     let mappings = {
@@ -159,6 +175,9 @@ function checkSyllogismMapping() {
     });
 
     let resultText = mappingCorrect ? "CORRECT" : "INCORRECT";
+    if(mappingCorrect) {
+        updateScore(1);
+    }
     $('#result').text(resultText).show();
 }
 
@@ -172,6 +191,7 @@ function checkCorrectness() {
         horses.querySelectorAll("#horse-over-there, #secretariat").length === 2 &&
         speakingThings.querySelectorAll("#speaks, #speak").length === 2) {
         resultText = "Correct!";
+        updateScore(1);
     }
 
     $('#result').text(resultText).show(); // Show the result text
@@ -188,6 +208,9 @@ function checkBuildCorrect() {
     let correctCount = propositions.filter(prop => correctPropositions.includes(prop)).length;
     let resultText = (correctCount === correctPropositions.length) ? "CORRECT" : "Incorrect or incomplete propositions";
     $('#result').text(resultText).show();
+    if (correctCount === correctPropositions.length) {
+        updateScore(1);
+    }
 }
 
 function checkQuiz5Correct() {
@@ -226,8 +249,10 @@ function checkQuiz5Correct() {
     console.log(`Total correct propositions: ${correctCount}`);
 
     let resultText = (correctCount === Object.keys(correctPropositions).length) ? "CORRECT" : "Incorrect or incomplete propositions";
+    if (correctCount === Object.keys(correctPropositions).length) {
+        updateScore(1);
+    }
     console.log(`Result: ${resultText}`);
     $('#result').text(resultText).show();
 }
-
 

@@ -37,23 +37,48 @@
 
     <div class="quiz-content">
         {% if quiz.quiz_id == '5' %}
-        <div class="quiz-style-5-content">
-            <div class="draggable-items">
-                {% for item in quiz['items'] %}
-                <div draggable="true" id="{{ item['id'] }}" class="item quiz-5-item" ondragstart="drag(event)" data-category="{{ item.category }}">
-                    {{ item['name'] }}
-                </div>
-                {% endfor %}
-            </div>
-
+        <div class="row">
+          <div class="col-6">  <!-- Items on the left -->
+              <div class="draggable-items">
+                  {% for item in quiz['items'] %}
+                  <div draggable="true" id="{{ item['id'] }}" class="item quiz-5-item {{ item.category }}" ondragstart="drag(event)" data-category="{{ item.category }}">
+                      {{ item['name'] }}
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+          <div class="col-6">  <!-- Categories on the right -->
             <div class="categories">
-                {% for category in quiz['categories'] %}
-                <div draggable="true" id="{{ category['id'] }}" class="category quiz-5-category" data-name="{{ category['name'] }}" ondragover="allowDrop(event)" ondrop="drop(event, this)">
-                    {{ category['name'] }}
-                </div>
-                {% endfor %}
+              <!-- Group for v1, v2, v3 -->
+              Valid Syllogism
+              <div class="category-group">
+                
+                  {% for category in quiz['categories'] %}
+                  
+                      {% if category['id'] in ['v1', 'v2', 'v3'] %}
+                        
+                          <div draggable="true" id="{{ category['id'] }}" class="category quiz-5-category" data-name="{{ category['name'] }}" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+                              {{ category['name'] }}
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              </div>
+              <!-- Group for f1, f2, f3 -->
+              Fallacious syllogism
+              <div class="category-group">
+                
+                  {% for category in quiz['categories'] %}
+                      {% if category['id'] in ['f1', 'f2', 'f3'] %}
+                        
+                          <div draggable="true" id="{{ category['id'] }}" class="category quiz-5-category" data-name="{{ category['name'] }}" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+                              {{ category['name'] }}
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              </div>
             </div>
-        </div>
+          </div>
+      </div>
         {% else %}
         <div class="categories">
             {% for category in quiz['categories'] %}

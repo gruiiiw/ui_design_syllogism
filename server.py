@@ -1,11 +1,11 @@
 from flask import Flask
 from flask import render_template
 from markupsafe import Markup
-from flask import Response, request, jsonify
+from flask import Response, request, jsonify, session
 
 
 app = Flask(__name__)
-
+app.secret_key = 'perrytheplatypus'
 
 
 lessons = {
@@ -177,7 +177,7 @@ quizzes = {
       "quiz_id": "5",
       "title": "Putting it all together",
       "text": "",
-      "next":"/",
+      "next":"/results",
       "prev":"/quiz/4",
       "categories": [
             {"id": "v1", "name": "(1)"},
@@ -188,13 +188,13 @@ quizzes = {
             {"id": "f3", "name": "(3) Therefore, "},
         ],
         "items": [
+            {"id": "prompt6", "name": "are", "category": "pt6"},
+            {"id": "prompt7", "name": "is", "category": "pt7"},
             {"id": "prompt1", "name": "reptiles", "category": "pt1"},
             {"id": "prompt2", "name": "a snake", "category": "pt2"},
             {"id": "prompt3", "name": "Mikey", "category": "pt3"},
             {"id": "prompt4", "name": "a reptile", "category": "pt4"},
             {"id": "prompt5", "name": "All snakes", "category": "pt5"},
-            {"id": "prompt6", "name": "are", "category": "pt6"},
-            {"id": "prompt7", "name": "is", "category": "pt7"},
         ]
    }
 
@@ -230,6 +230,7 @@ def quiz_page4():
 # Quiz Pages - We need to have something to store the score
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
+    session.setdefault('score', 0)
     quiz = quizzes.get(quiz_id)
     if quiz:
         # Make sure quiz['items'] is present and is a list
@@ -243,13 +244,22 @@ def quiz(quiz_id):
     else:
         return "Quiz not found", 404
 
+@app.route('/results')
+def results():
+    score = session.get('score', 0)
+    session.pop('score', None)
+    return render_template('results.html', score=score)
 
 # Other
 @app.template_filter('contains_any')
 def contains_any(word, terms):
     return any(term in word for term in terms)
 
-
+@app.route('/update-score', methods=['POST'])
+def update_score():
+    increment = int(request.form.get('increment', 0))
+    session['score'] = session.get('score', 0) + increment
+    return jsonify({'score': session['score']})
 
 
 
