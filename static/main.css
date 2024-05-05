@@ -160,7 +160,7 @@
     border: none;
     border-radius: 30px; 
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
 }
 .copula{
     background-color:  #DDBC8A; /* yellow */
@@ -587,7 +587,7 @@
 }
 
 .pt1, .pt2, .pt3, .pt4, .pt5, .pt6, .pt7 {
-    width: auto;
+    max-width: 150px;
     padding: 1px 10px;
     background-color: #a8b4ac;
     color: black;
@@ -608,6 +608,9 @@
     flex-direction: column;
     align-items: flex-end;
     font-family: 'Bodani FLF';
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 500;
 }
 
 .quiz-5-category {
@@ -619,8 +622,12 @@
     text-align: start;
     overflow: hidden;
     box-sizing: border-box;
-    margin-bottom: 5px;
+    margin-bottom: px;
     font-family: 'Bodani FLF';
+    display: flex;
+    font-size: 24px;
+
+
 }
 
 .category-group {

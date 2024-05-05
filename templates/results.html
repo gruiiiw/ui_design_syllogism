@@ -32,12 +32,14 @@
             color: white; /* White font color */
             font-size: 30px; 
             padding: 15px 70px; /* Larger padding */
-            border-radius: 50px; /* Rounded edges */
+            border-radius: 25px; /* Rounded edges */
             border: none; /* No border */
             cursor: pointer; /* Cursor on hover */
             transition: background-color 0.3s; /* Smooth color transition */
             margin-top: 20px; /* Add more margin to move below */
             text-decoration: none; /* Remove default button underline */
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .restart-btn:hover {
@@ -75,7 +77,7 @@
 
         <!-- Restart button -->
         <a href="/">
-            <button class="restart-btn">RESTART</button>
+            <button class="restart-btn">Restart</button>
         </a>
     </div>
 </body>
@@ -87,8 +89,7 @@
     // Get all the star elements
     let stars = document.querySelectorAll('.star');
 
-    // Assume score is obtained from your server and passed to this script
-    let score = {{ score }}; // Replace this with actual score
+    let score = {{ score }}; //
 
     // Add the 'filled' class to the stars up to the score
     for (var i = 0; i < score; i++) {
