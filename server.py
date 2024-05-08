@@ -76,7 +76,7 @@ lessons = {
       "title": "Logical Fallacies",
       "text": "",
       "text1": "Make sure to not affirm the consequent:",
-      "list1": ["", "(1) All dogs are mammals", "(2) Aristotle is a mammal", "(3) Therefore, Aristotle is a dog.", ""],
+      "list1": ["", "(1) All dogs are mortals", "(2) Aristotle is a mortal", "(3) Therefore, Aristotle is a dog.", ""],
 
       "text2": "or deny the antecedent by accident:",
       "list2": ["", "(1) All universities have students", "(2) No high schools are universities", "(3) Therefore, no high schools have students", ""],
