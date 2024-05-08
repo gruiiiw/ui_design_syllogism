@@ -1,560 +1,564 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alice:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
+
 /* Homepage css */
 .beigeBackground {
-    background-color: #f4eadb;
-    font-size: 20px;
+  background-color: #f4eadb;
+  font-size: 20px;
 }
 
-.center-content{
-    justify-content: center;
-    text-align: center;    
+.center-content {
+  justify-content: center;
+  text-align: center;
 }
 
-.right-align{
-    text-align: right;
+.right-align {
+  text-align: right;
 }
 
 .titlePadding {
-    padding-top: 20px;
-    padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
-.bodaniText{
-    font-family: 'Bodani FLF';
-    color: black;
+.bodaniText {
+  font-family: "Alice";
+  color: black;
 }
 
-.textSmall{
-    font-size: 25px !important;
+.textSmall {
+  font-size: 23px !important;
 }
 
-.textLargest{
-    font-size: 60px;
+.textLargest {
+  font-size: 60px;
 }
 
-.textLarge{
-    font-size: 48px;
+.textLarge {
+  font-size: 48px;
 }
 
-.navLine{
-    border-top: 3px solid #967d55;
+.navLine {
+  border-top: 3px solid #967d55;
 }
 /* Learning Graphics*/
-.term{
-    color: #A87456;
-    font-weight: bold;
+.term {
+  color: #a87456;
+  font-weight: bold;
 }
-
 
 .definition {
-    position: relative;
-    cursor: help;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-    inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-  }
+  position: relative;
+  cursor: help;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 .tooltip {
-    visibility: hidden;
-    width: 200px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
 
-    position: absolute;
-    z-index: 5;
-    bottom: 100%;
-    left: 10%; /* Change this line to position the tooltip to the right */
-    margin-left: 10px; /* Add this line to add some spacing between the word and the tooltip */
+  position: absolute;
+  z-index: 5;
+  bottom: 100%;
+  left: 10%; /* Change this line to position the tooltip to the right */
+  margin-left: 10px; /* Add this line to add some spacing between the word and the tooltip */
 
-    opacity: 0;
-    transition: opacity 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-  .definition:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-
-.margin20{
-    margin: 20px;
+.definition:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
-
-.margin10{
-    margin: 10px;
+.margin20 {
+  margin: 20px;
 }
 
-.premise{    
-    background-color: #55896B; /* Green */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 15px 32px;
-    font-size: 36px;
-    max-width: 200px; /* Add this line */
+.margin10 {
+  margin: 10px;
 }
 
-.tan-button{
-    background-color: #DDBC8A; 
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 25px;
-    font-size: 36px;
+.premise {
+  background-color: #55896b; /* Green */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 36px;
+  max-width: 200px; /* Add this line */
 }
 
+.tan-button {
+  background-color: #ddbc8a;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 25px;
+  font-size: 36px;
+}
 
 @keyframes flash {
-    50% { background-color: #dcb06e; } 
-    100% { background-color: #DDBC8A; } 
+  50% {
+    background-color: #dcb06e;
+  }
+  100% {
+    background-color: #ddbc8a;
+  }
 }
 
-
-#equalsButton{
-    background-color: #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 30px;
-    font-size: 36px;
-    outline: none;
-    animation: flash 5s infinite;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+#equalsButton {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 30px;
+  font-size: 36px;
+  outline: none;
+  animation: flash 5s infinite;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-#equalsButton2{
-    background-color: #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 40px; 
-    color: white;
-    padding: 15px 30px;
-    font-size: 36px;
-    outline: none;
-    animation: flash 5s infinite;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-    }
-
+#equalsButton2 {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 15px 30px;
+  font-size: 36px;
+  outline: none;
+  animation: flash 5s infinite;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 #equalsButton:hover {
-    background-color: #a06e23; 
-    cursor: pointer;
+  background-color: #a06e23;
+  cursor: pointer;
 }
 
 #equalsButton2:hover {
-    background-color: #a06e23; 
-    cursor: pointer;
+  background-color: #a06e23;
+  cursor: pointer;
 }
 
-.subject{
-    background-color: #3D82AB; /* blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
+.subject {
+  background-color: #3d82ab; /* blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
 }
 
-.predicate{
-    background-color: #A87456; /* brown */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px 15px;
+.predicate {
+  background-color: #a87456; /* brown */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px 15px;
 }
-.copula{
-    background-color:  #DDBC8A; /* yellow */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
-}
-
-#conclusionButton, #conclusionButton2{
-    margin-left: 40px;
-    background-color: #3D82AB; /*blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 15px 32px;
-    font-size: 36px;
+.copula {
+  background-color: #ddbc8a; /* yellow */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
 }
 
-#showMoreButton{
-    background-color: #3D82AB; /*blue */
-    border: none;
-    border-radius: 30px; 
-    color: white;
-    padding: 10px;
-    outline: none;
+#conclusionButton,
+#conclusionButton2 {
+  margin-left: 40px;
+  background-color: #3d82ab; /*blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 36px;
+}
+
+#showMoreButton {
+  background-color: #3d82ab; /*blue */
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  outline: none;
 }
 
 #showMoreButton:hover {
-    background-color: #2c6b90; /*blue dark*/
+  background-color: #2c6b90; /*blue dark*/
 }
 
-#moreExamples{
-    border: none;
-    background-color: #f4eadb; /*blue */
-
+#moreExamples {
+  border: none;
+  background-color: #f4eadb; /*blue */
 }
 
-.term_container{
-    border: #000000 2px solid;
-    padding: 20px;
-
-
+.term_container {
+  border: #000000 2px solid;
+  padding: 20px;
 }
-
-
-
 
 /* Start Button */
 
 .startBtn {
-    background-color: #55896B; /* green */
-    border: none;
-    border-radius: 25px; 
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 32px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-family: 'Bodani FLF';
-    outline: none;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #55896b; /* green */
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Alice";
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .startBtn:hover {
-    background-color: #38694d; /* darker green */
+  background-color: #38694d; /* darker green */
 }
 
 /* Forward/Back Button */
 
-#nextBtn{
-    background-color: #55896B; /* green */
-    outline: none;
+#nextBtn {
+  background-color: #55896b; /* green */
+  outline: none;
 }
 
 #nextBtn:hover {
-    background-color: #38694d; /* Lighter Brown */
+  background-color: #38694d; /* Lighter Brown */
 }
 
-#nextBtn, #backBtn {
-    border: none;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    font-size: 50px;
-    line-height: 50px;
-    text-align:center;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
-    padding: 0; /* remove padding if any */
-    outline: none;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1), 
-                inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
-    pointer-events: auto; /* Add this line */
-
+#nextBtn,
+#backBtn {
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  padding: 0; /* remove padding if any */
+  outline: none;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: auto; /* Add this line */
 }
 
-#backBtn{
-    background-color: gray; /* Light */
+#backBtn {
+  background-color: gray; /* Light */
 }
 
 #backBtn:hover {
-    background-color: #666666; /* Dark Gray */
+  background-color: #666666; /* Dark Gray */
 }
 
 .buttonContainer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    z-index: 4;
-    pointer-events: none; /* Add this line */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  z-index: 4;
+  pointer-events: none; /* Add this line */
 }
 
 .buttonContainer .backBtn {
-    margin-right: auto;
-    pointer-events: auto; /* Add this line */
+  margin-right: auto;
+  pointer-events: auto; /* Add this line */
 }
 
 .buttonContainer .nextBtn {
-    margin-left: auto;
-    pointer-events: auto; /* Add this line */
-
+  margin-left: auto;
+  pointer-events: auto; /* Add this line */
 }
 
-
 /* Quiz css */
-.categories, .draggable-items {
-    display: flex;
-    cursor: pointer;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    z-index: 5;
+.categories,
+.draggable-items {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 5;
 }
 
 .category:hover {
-    background-color:#f7f1e9; /* Change background color when hover */
+  background-color: #f7f1e9; /* Change background color when hover */
 }
 
 .category {
-    width: 30%;
-    min-height: 220px;
-    max-height: fit-content;
-    border: 2px solid #000000;
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    flex-wrap: wrap; /* makes it so the items in the box don't come out */
-    font-family: 'Bodani FLF';
-    font-size: 24px;
+  width: 30%;
+  min-height: 220px;
+  max-height: fit-content;
+  border: 2px solid #000000;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* makes it so the items in the box don't come out */
+  font-family: "Alice";
+  font-size: 24px;
 }
 
 .quiz-style-1 .item {
-    width: auto;
-    margin: 5px 15px;
-    padding: 5px 35px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-family: 'Bodani FLF';
-    font-size: 26px;
+  width: auto;
+  margin: 5px 15px;
+  padding: 5px 35px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-family: "Alice";
+  font-size: 26px;
 }
 
 .quiz-style-1 .item:hover {
-    background-color: #a66745; /* Change background color when hover */
+  background-color: #a66745; /* Change background color when hover */
 }
 
 .quiz-style-2 .item {
-    width: auto;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-family: 'Bodani FLF';
+  width: auto;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-family: "Alice";
 }
 
 .quiz-style-2 .item:hover {
-    background-color: #a66745; /* Change background color when hover */
+  background-color: #a66745; /* Change background color when hover */
 }
 
 #result {
-    clear: both;
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    display: none;
-    font-family: 'Bodani FLF';
+  clear: both;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+  font-family: "Alice";
 }
 
 .buttonContainer {
-    clear: both;
-    padding-top: 20px;
+  clear: both;
+  padding-top: 20px;
 }
 
 .highlight-blue {
-    background-color: #2596BE;
-    color: white;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #2596be;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
 .highlight-green {
-    background-color: #588c6c;
-    color: white;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #588c6c;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
 .highlight-yellow {
-    background-color: #e0bc8c;
-    color: black;
-    border-radius: 8px;
-    padding: 3px 8px;
+  background-color: #e0bc8c;
+  color: black;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
-.draggable{
-    margin: 8px 12px;
-    padding: 8px 12px;
+.draggable {
+  margin: 8px 12px;
+  padding: 8px 12px;
 }
 
 .drop-zone {
-    width: 100%;
-    height: 50px;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 50px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .draggable:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
-#aristotle, #a-man, #the-professor, #lectures, #i, #hungry {
-    width: auto;
-    margin: 8px 12px;
-    padding: 5px 25px;
-    background-color: #b07454;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    box-sizing: border-box;
-    font-family: 'Bodani FLF';
-    font-size: 24px;
+#aristotle,
+#a-man,
+#the-professor,
+#lectures,
+#i,
+#hungry {
+  width: auto;
+  margin: 8px 12px;
+  padding: 5px 25px;
+  background-color: #b07454;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-family: "Alice";
+  font-size: 24px;
 }
 
-#aristotle:hover, #a-man:hover, #the-professor:hover, #lectures:hover, #i:hover, #hungry:hover {
-    background-color: #8a5a3e; /* Adjust this color as needed */
+#aristotle:hover,
+#a-man:hover,
+#the-professor:hover,
+#lectures:hover,
+#i:hover,
+#hungry:hover {
+  background-color: #8a5a3e; /* Adjust this color as needed */
 }
 
-#is, #am {
-    width: auto;
-    margin: 8px 12px;
-    padding: 5px 25px;
-    background-color: #ddbc8a;
-    color: white;
-    text-align: center;
-    border-radius: 1000px;
-    box-sizing: border-box;
-    font-family: 'Bodani FLF';
-    font-size: 24px;
+#is,
+#am {
+  width: auto;
+  margin: 8px 12px;
+  padding: 5px 25px;
+  background-color: #ddbc8a;
+  color: white;
+  text-align: center;
+  border-radius: 1000px;
+  box-sizing: border-box;
+  font-family: "Alice";
+  font-size: 24px;
 }
 
-#is:hover, #am:hover {
-    background-color: #cea86f;
+#is:hover,
+#am:hover {
+  background-color: #cea86f;
 }
 
 #result {
-    visibility: visible !important;
+  visibility: visible !important;
 }
 
 .quiz-style-3 .category {
-    width: 48%;
-    min-height: 70px;
-    margin: 2px 0%;
-    padding: 0px 50px 0px 120px;
-    border: none;
-    border-radius: 80px;
-    box-sizing: border-box;
-    /*display: flex;
+  width: 48%;
+  min-height: 70px;
+  margin: 2px 0%;
+  padding: 0px 50px 0px 120px;
+  border: none;
+  border-radius: 80px;
+  box-sizing: border-box;
+  /*display: flex;
     justify-content: flex-start; */
-    background-color: #beafa0;
-    position: relative;
-    text-align: center;
+  background-color: #beafa0;
+  position: relative;
+  text-align: center;
 }
 
 .quiz-style-3 .category::before {
-    content: attr(data-name);
-    background-color: #588c6c;
-    color: white;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  content: attr(data-name);
+  background-color: #588c6c;
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quiz-style-3 .category[data-name="C"]::before {
-    background-color: #4084ac;
+  background-color: #4084ac;
 }
 
 .quiz-style-3 .item {
-    margin-top: 5px;
-    padding: 10px 35px;
-    background-color: #b07454;
-    border-radius: 50px;
-    font-size: 20px;
-    color: white;
-    font-family: 'Bodani FLF';
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* hover transition */
+  margin-top: 5px;
+  padding: 10px 35px;
+  background-color: #b07454;
+  border-radius: 50px;
+  font-size: 20px;
+  color: white;
+  font-family: "Alice";
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* hover transition */
 }
 
-
 #quizContainer.quiz-style-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    font-family: 'Bodani FLF';
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  font-family: "Alice";
 }
 
 .quiz-style-4 .quiz-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    font-family: 'Bodani FLF';
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Alice";
 }
 
 .quiz-style-4 .draggable-items {
-    width: 48%;
-    padding-right: 2%;
-    order: 1;
+  width: 48%;
+  padding-right: 2%;
+  order: 1;
 }
 
 .quiz-style-4 .categories {
-    
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    order: 2;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  order: 2;
 }
 
-.quiz-style-4 .item, .quiz-style-4 .category {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: transparent;
+.quiz-style-4 .item,
+.quiz-style-4 .category {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
 }
 
 .quiz-style-4 .category {
-    background-color: transparent;
-    border: 3px solid #000000;
-    min-width: 500px;
-    width: 500px;
-    min-height: 120px;
-    text-align: start;
-    align-items: flex-start;
-    overflow: hidden;
-    box-sizing: border-box;
+  background-color: transparent;
+  border: 3px solid #000000;
+  min-width: 500px;
+  width: 500px;
+  min-height: 120px;
+  text-align: start;
+  align-items: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-
 .quiz-style-4 .bodaniText {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 /*
 .quiz-style-5-content {
@@ -563,80 +567,87 @@
     justify-content: space-between;
 }
 */
-#prompt1, #prompt2, #prompt3, #prompt4, #prompt5, #prompt6, #prompt7 {
-    padding: 5px 10px;
-    display: block;
-    margin-bottom: 5px;
-    background-color: #a8b4ac;
-    color: black;
-    font-weight: 500;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 200px;
-    font-family: 'Bodani FLF';
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 24px;
+#prompt1,
+#prompt2,
+#prompt3,
+#prompt4,
+#prompt5,
+#prompt6,
+#prompt7 {
+  padding: 5px 10px;
+  display: block;
+  margin-bottom: 5px;
+  background-color: #a8b4ac;
+  color: black;
+  font-weight: 500;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 200px;
+  font-family: "Alice";
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
 }
 
-#prompt6, #prompt7 {
-    background-color: #e0bc8c;
-    font-family: 'Bodani FLF';
-    font-size: 24px;
+#prompt6,
+#prompt7 {
+  background-color: #e0bc8c;
+  font-family: "Alice";
+  font-size: 24px;
 }
 
-.pt1, .pt2, .pt3, .pt4, .pt5, .pt6, .pt7 {
-    max-width: 150px;
-    padding: 1px 10px;
-    background-color: #a8b4ac;
-    color: black;
-    text-align: center;
-    box-sizing: border-box;
-    font-weight: 500;
-    font-family: 'Bodani FLF';
+.pt1,
+.pt2,
+.pt3,
+.pt4,
+.pt5,
+.pt6,
+.pt7 {
+  max-width: 150px;
+  padding: 1px 10px;
+  background-color: #a8b4ac;
+  color: black;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-family: "Alice";
 }
 
-.pt6, .pt7 {
-    background-color: #e0bc8c;
+.pt6,
+.pt7 {
+  background-color: #e0bc8c;
 }
-
 
 .quiz-style-5 .categories {
-    width: 48%; 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    font-family: 'Bodani FLF';
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: 500;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Alice";
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 500;
 }
 
 .quiz-5-category {
-    background-color: transparent;
-    border: 3px solid #000000;
-    min-width: 400px;
-    width: 400px;
-    min-height: 50px;
-    text-align: start;
-    overflow: hidden;
-    box-sizing: border-box;
-    margin-bottom: px;
-    font-family: 'Bodani FLF';
-    display: flex;
-    font-size: 24px;
-
-
+  background-color: transparent;
+  border: 3px solid #000000;
+  min-width: 400px;
+  width: 400px;
+  min-height: 50px;
+  text-align: start;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: px;
+  font-family: "Alice";
+  display: flex;
+  font-size: 24px;
 }
 
 .category-group {
-    border: 2px solid #000000;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: transparent;
+  border: 2px solid #000000;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: transparent;
 }
-
-
-
-
