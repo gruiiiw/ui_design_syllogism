@@ -57,7 +57,7 @@ lessons = {
    "5":{
       "lesson_id": "5",
       "title": "Building the Syllogism",
-      "text": "Now that we know how propositions work, let’s put them together into syllogistic form:",
+      "text": "Next: now that we know how propositions work, let’s put them together into syllogistic form:",
       
       "list1": ["(P1) All people are mortal", "(P2) Aristotle is a person", "(C) Aristotle is mortal"],
       "list2": ["(P1) All plants speak", "(P2) That horse over there is a plant", "(C) That horse over there speaks"],
@@ -75,11 +75,11 @@ lessons = {
       "lesson_id": "6",
       "title": "Logical Fallacies",
       "text": "",
-      "text1": "Make sure to not accidentally affirm the consequent:",
-      "list1": ["(1) All dogs are mammals", "(2) Aristotle is a mammal", "(3) Therefore, Aristotle is a dog."],
+      "text1": "Make sure to not affirm the consequent:",
+      "list1": ["", "(1) All dogs are mammals", "(2) Aristotle is a mammal", "(3) Therefore, Aristotle is a dog.", ""],
 
-      "text2": "or deny the antecedent:",
-      "list2": ["(1) All universities have students", "(2) No high schools are universities", "(3) Therefore, no high schools have students"],
+      "text2": "or deny the antecedent by accident:",
+      "list2": ["", "(1) All universities have students", "(2) No high schools are universities", "(3) Therefore, no high schools have students", ""],
       
       "next_lesson":"/quiz/4",
       "prev_lesson":"/quiz/3",
@@ -176,7 +176,7 @@ quizzes = {
    "5":{
       "quiz_id": "5",
       "title": "Putting it all together",
-      "text": "",
+      "text": "Using the terms below, build the following two syllogisms (Hint: start both syllogisms with \"Mikey\")",
       "next":"/results",
       "prev":"/quiz/4",
       "categories": [
